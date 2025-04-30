@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    
+    <header>
+        <img src="../img/logo (1).png" alt="Logo" class="logo">
+    </header>
+
+    <main>
+       
+        <section class="backgroud" style="position: absolute; width: 2000px; height: 962px; ; ">
+            <img  src="../img/backgorund.png" alt="">
+        </section>
+
+        
+        <form action="../php/login.php" method="POST">
+
+            <h1>Login</h1>
+            <label for="email">Email:</label>
+            <input type="email" id="iEmail" name="email" required>
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="iSenha" name="senha" required>
+
+            <button type="submit">Entrar</button>
+            <p>Não tem uma conta? <a href="../html/cadastro.html">Cadastre-se</a></p>
+
+            <button class="voltar" onclick="window.location.href='../index.html'">Voltar</button>
+
+        </form>       
+    </main>
+</body>
+
+</html>
