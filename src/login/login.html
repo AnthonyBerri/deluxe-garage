@@ -6,6 +6,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
@@ -16,7 +17,7 @@
         <img src="../img/logo.png" alt="Logo" class="logo">
     
         <div class="login-btn">  <!-- Botão de login estilizado -->
-            <a href="../login/login.html" style="color: inherit">
+            <a href="../login/login.html" style="color: inherit; font-size: 35px;">
                 <i class="bi bi-person-circle"></i>
             </a>
         </div>
@@ -31,15 +32,11 @@
             </ul>
         </div>
     </header>
-
     <main>
-       
-        <section class="backgroud" style="position: absolute; width: 2000px; height: 962px; ; ">
-            <img  src="../img/backgorund.png" alt="">
-        </section>
-
         
-        <form action="../php/login.php" method="POST">
+        <div class="fullscreen-bg"></div>
+
+        <form action="../php/login.php" method="POST" style="position: absolute;">
 
             <h1>Login</h1>
             <label for="email">Email:</label>
@@ -53,8 +50,12 @@
 
             <button class="voltar" onclick="window.location.href='../home/index.html'">Voltar</button>
 
+            
         </form>       
+       
     </main>
+
+    
 
     <script src="script.js"></script>
 </body>

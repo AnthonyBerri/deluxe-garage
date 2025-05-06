@@ -21,6 +21,16 @@ main{
         height: 962px;
     }
  }
+
+ .fullscreen-bg {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../img/backgorund.png');
+    background-size: cover; /* Crops and fills the screen */
+    background-position: center; /* Centers the crop */
+    z-index: 0;
+  }
+  
     
  form{
     display: flex;
@@ -88,18 +98,11 @@ main{
     }
 }
 
-@media (max-width: 768px) {
-    form{
-        width: 70%;
-        height: auto;
-    }
-    & h1{
+@media (max-width: 1024px) {
+    h1{
         font-size: 36px;
     }
     & input{
-        width: 100%;
-    }
-    & button {
         width: 100%;
     }
 }
