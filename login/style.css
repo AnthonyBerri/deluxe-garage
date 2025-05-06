@@ -10,8 +10,8 @@ header{
     height: 80px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 0;
+    justify-content: space-between;
+    padding: 0 30px;
     background-color: #000;
     z-index: 10;
     position: fixed;
@@ -19,12 +19,88 @@ header{
     left: 0;
 }
 
+.menu-btn,
+.login-btn {   
+    padding-right: 10px;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 1.2em;  
+    cursor: pointer;
+    z-index: 11;
+    border: none;
+    font-family: 'Franklin Gothic medium', 'Arial Narrow', Arial, sans-serif
+    
+    
+}
+
+.menu-content {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 200px;
+    background-color: #111;
+    padding: 15px;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu-content ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu-content a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.menu-content.show {
+    display: flex;
+}
+
+
 .logo{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     width: 100px;
 }
+
+.sidebar {
+    position: fixed;
+    top: 50px;
+    left: -250px; /* Hidden off-screen */
+    width: 200px;
+    height: 100%;
+    background-color: #000000;
+    color: white;
+    transition: left 0.3s ease;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar.show {
+    left: 0; /* Slide into view */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+    padding-left: 10px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    
+}
+
  main{
     display: flex;
     justify-content: center;
