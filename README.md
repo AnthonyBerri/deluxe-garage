@@ -1,5 +1,13 @@
 # **Deluxe Garage**
 
+<!-- 
+- Cabeçalhos (#, ##, ###...);
+- Negrito e itálico (**negrito**, *itálico*);
+- Listas (- item ou 1. item);
+- Links ([texto](URL));
+- Imagens (![Texto Alternativo](caminho_da_imagem)).
+-->
+
 ## **1. Introdução**
 <!-- As quebras de linha devem ocorrer na Col 104. Verifique o valor no campo que indica a coluna a 
 linha no "footer" do vs code-->    
