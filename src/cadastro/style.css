@@ -4,12 +4,174 @@
     box-sizing: border-box;
     list-style: none;
 }
+/* Remove a barra de rolagem */
+body {
+    overflow: hidden;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding-top: 80px;
+    max-width: 100vw;
 
+    & section{    
+        left: 0px;
+        top: 0px;
+        width: 1656px; 
+        height: 962px;
+    }
+ }
 .fullscreen-bg {
     width: 100vw;
     height: 100vh;
     background-image: url('../img/backgorund.png');
     background-size: cover; /* Crops and fills the screen */
     background-position: center; /* Centers the crop */
-    z-index: 0;
+    z-index: -1;
+    position: absolute;
+
   }
+
+.form-cadastro {
+    position: absolute; /* Garante que você possa posicionar o elemento */
+    right: 0; /* Cola o formulário à direita */
+    top: 0; /* Começa do topo */
+    width: 50vw; /* Define a largura como metade da tela */
+    height: 100vh; /* Ocupa toda a altura da tela */
+    background-color: rgba(255, 255, 255); /* Fundo branco */
+    border-radius: 0; /* Remove bordas arredondadas, se necessário */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: flex; /* Torna o formulário um contêiner flexível */
+    flex-direction: column; /* Organiza os elementos verticalmente */
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+
+    
+    & h1 {
+        display: flex;
+        justify-content: start;
+        align-items: start;    
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333;
+    }
+    /* Conteudo do Form */
+    & .form-body {   
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 60%;
+        padding: 20px;
+
+        gap: 10px;
+        
+       /* Estilo do campo de entrada */
+        
+       .radio-group {
+        display: flex;
+        gap: 15px; /* Espaçamento entre os botões */
+        align-items: center; /* Alinha os itens verticalmente */
+        padding: 10px;
+    }
+    
+    .radio-group div {
+        display: flex;
+        align-items: center;
+        gap: 5px; /* Espaçamento entre o botão e o texto */
+    }
+    
+    input[type="radio"] {
+        accent-color: #333; /* Cor do botão de rádio */
+        cursor: pointer;
+    }
+    
+    label {
+        font-size: 14px;
+        color: #333;
+        cursor: pointer;
+    }
+          
+       & .form__group {
+
+            position: relative;
+            padding: 15px 0 0;
+            width: 100%;
+            max-width: 180px;
+          }         
+          
+          .form__field {
+            font-family: inherit;
+            width: 100%;
+            border: none;
+            border-bottom: 2px solid #9b9b9b;
+            outline: 0;
+            font-size: 17px;
+            color: #0a0a0a;
+            padding: 7px 0;
+            background: transparent;
+            transition: border-color 0.2s;
+          }
+          
+          .form__field::placeholder {
+            color: transparent;
+          }
+          
+          .form__field:placeholder-shown ~ .form__label {
+            font-size: 17px;
+            cursor: text;
+            top: 20px;
+          }
+          
+          .form__label {
+            position: absolute;
+            top: 0;
+            display: block;
+            transition: 0.2s;
+            font-size: 17px;
+            color: #9b9b9b;
+            pointer-events: none;
+          }
+          
+          .form__field:focus {
+            padding-bottom: 6px;
+            font-weight: 700;
+            border-width: 3px;
+            border-image: linear-gradient(to right, #020202, #949797);
+            border-image-slice: 1;
+          }
+          
+          .form__field:focus ~ .form__label {
+            position: absolute;
+            top: 0;
+            display: block;
+            transition: 0.2s;
+            font-size: 17px;
+            color: #484949;
+            font-weight: 700;
+          }
+          
+          /* reset input */
+          .form__field:required, .form__field:invalid {
+            box-shadow: none;
+          }
+        /* FIM Estilo do campo de entrada */  
+
+    }
+    & .form-footer {
+        
+      display: flex;
+      flex-direction: column;
+      align-items: center;  
+      gap: 10px;
+      padding: 10px 0;
+      
+    }
+   
+}
+
+

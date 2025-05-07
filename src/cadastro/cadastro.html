@@ -11,14 +11,98 @@
 
 <body>
     
-    <header id="header"></header>
-
+    <header>
+        <button class="menu-btn">☰ </button> 
+    
+        <img src="../img/logo.png" alt="Logo" class="logo">
+    
+        <div class="login-btn">  <!-- Botão de login estilizado -->
+            <a href="./cadastro.html" style="color: inherit; font-size: 35px;">
+                <i class="bi bi-person-circle"></i>
+            </a>
+        </div>
+    
+         <!-- Sidebar -->
+        <div class="sidebar">
+            <ul>               
+                <li><a href="../home/index.html">Home</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Carros</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </div>
+    </header>
     <main>
-       
         <div class="fullscreen-bg"></div>
 
+        <form action="" method="POST" class="form-cadastro">
+            <div class="form-header"> 
+                <h1>Cadastro</h1>
+            </div>    
+
+            <div class="form-body">    
+                
+                <div class="form__group field">
+                    <input type="input" id="iNome" class="form__field" placeholder="Name" required="">
+                    <label for="name" class="form__label">Nome Completo</label>
+                </div>
+            
+                <div class="form__group field">
+                    <input type="input" id="iCPF" class="form__field" placeholder="Name" required="">
+                    <label for="CPF" class="form__label">CPF</label>
+                </div>                   
+                <div class="form__group field">
+                    <input type="input" class="form__field" placeholder="Name" required="">
+                    <label for="name" class="form__label">Nacionalidade</label>
+                </div>
+                <div class="form__group">
+                    <label  for="genero" class="form__label">Gênero</label>
+                    <div class="radio-group">
+                        <div>
+                            <input type="radio" id="masculino" name="genero" value="masculino">
+                            <label for="masculino">Masculino</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="feminino" name="genero" value="feminino">
+                            <label for="feminino">Feminino</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="outro" name="genero" value="outro">
+                            <label for="outro">Outro</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form__group field">
+                    <input type="input" class="form__field" placeholder="Name" required="">
+                    <label for="name" class="form__label">Name</label>
+                </div>
+                <div class="form__group field">
+                    <input type="input" class="form__field" placeholder="Name" required="">
+                    <label for="name" class="form__label">Name</label>
+                </div>
+                <div class="form__group field">
+                    <input type="input" class="form__field" placeholder="Name" required="">
+                    <label for="name" class="form__label">Name</label>
+                </div>
+                <div class="form__group field">
+                    <input type="input" class="form__field" placeholder="Name" required="">
+                    <label for="name" class="form__label">Name</label>
+                </div>
+                     
+            </div>    
+
+
+            <div class="form-footer">
+                <button type="submit">Cadastrar</button>
+                <p>Já tem uma conta? <a href="../login/login.html">Faça login</a></p>
+            </div>        
+        </form>
+    </main>   
+        
+
     <script src="script.js"></script>
-    <script defer src="../header.js"></script>
+    <script src="../global.js"></script>
 </body>
 
 </html>
