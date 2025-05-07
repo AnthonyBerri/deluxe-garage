@@ -3,7 +3,7 @@ function globalHeader(){
     return`
         <button class="menu-btn">☰ </button> 
     
-        <img src="../img/logo.png" alt="Logo" class="logo">
+        <p class="logo">DeluxeGarage</p>
     
         <div class="login-btn">  <!-- Botão de login estilizado -->
             <a href="../login/login.html" style="color: inherit; font-size: 35px;">
@@ -11,7 +11,7 @@ function globalHeader(){
             </a>
         </div>
     
-         <!-- Sidebar -->
+        <!-- Sidebar -->
         <div class="sidebar">
             <ul>               
                 <li><a href="../home/index.html">Home</a></li>
