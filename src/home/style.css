@@ -50,10 +50,10 @@ section .list .item.exit {
 
 @keyframes slideInFromLeft {
     from {
-        transform: translateX(-100%); /* Start off-screen to the left */
+        transform: translateX(-100%);
     }
     to {
-        transform: translateX(0); /* Stop in the center */
+        transform: translateX(0);
     }
 }
 
