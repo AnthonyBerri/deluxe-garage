@@ -22,7 +22,7 @@ header{
     z-index: 11;
     border: none;
     font-family: 'Franklin Gothic medium', 'Arial Narrow', Arial, sans-serif;
-    padding-bottom: 20px;
+    padding-bottom: 12px;
 }
 
 .menu-content {
@@ -58,6 +58,7 @@ header{
     left: 50%;
     transform: translateX(-50%);
     width: 150px;
+    padding-bottom: 12px;
 }
 
 .sidebar {
