@@ -15,9 +15,17 @@ function globalHeader(){
         <div class="sidebar">
             <ul>               
                 <li><a href="../home/index.html">Home</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Carros</a></li>
-                <li><a href="#">Contato</a></li>
+                <li><a href="../home/index.html">Pedidos</a></li>
+                <li><a href="#">Quem Somos?</a></li>
+
+                <h1>Marcas</h1>
+
+                <li><a href="#">Audi</a></li>
+                <li><a href="#">BMW</a></li>
+                <li><a href="#">Ferrari</a></li>
+                <li><a href="#">Lamborghini</a></li>
+                <li><a href="#">Mercedes</a></li>
+                <li><a href="#">Porsche</a></li>
             </ul>
         </div> 
     `;
