@@ -26,7 +26,7 @@ main{
 .fullscreen-bg {
     width: 100vw;
     height: 100vh;
-    background-image: url('../img/backgorund.png');
+    background-image: url('../../assets/img/backgorund.png');
     background-size: cover; /* Crops and fills the screen */
     background-position: center; /* Centers the crop */
     z-index: -1;
