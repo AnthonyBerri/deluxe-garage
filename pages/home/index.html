@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deluxe Garage Home Page</title>
-    <link rel="stylesheet" href="../../components/header.css">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="/components/header.js" defer></script>
+    <script defer src="/components/carrossel.js"></script>
 </head>
 
 <body>
 
-    <header id="header"></header>    
+    <header-component></header-component>
     
     <!--
     <section class="banner-section">
@@ -26,7 +27,7 @@
         <div class="list">
             <div class="item active">
                 <div class=" car-image">
-                    <img src="../../assets/img/ferrari.png"  alt="Carro 1">
+                    <img src="/assets/img/ferrari.png"  alt="Carro 1">
                 </div>
                 <div class="content">
                     <h2>Ferrari</h2>
@@ -47,7 +48,7 @@
             </div>
             <div class="item">
                 <div class=" car-image">
-                    <img src="../../assets/img/porsche.png"  alt="Carro 1" style="width: 500px; height: 500px;">
+                    <img src="/assets/img/porsche.png"  alt="Carro 1" style="width: 500px; height: 500px;">
                 </div>
                 <div class="content">
                     <h2>porsche</h2>
@@ -67,7 +68,7 @@
             </div>
             <div class="item">
                 <div class=" car-image">
-                    <img src="../../assets/img/audi.png"  alt="Carro 1">
+                    <img src="assets/img/audi.png"  alt="Carro 1">
                 </div>
                 <div class="content">
                     <h2>Audi RS 5</h2>
@@ -86,8 +87,8 @@
             </div>
         </div>
         <div class="arrow">
-            <button id="prev"><img src="../../assets/img/arrow.svg" alt="seta esquerda"></button>
-            <button id="next"><img src="../../assets/img/arrow.svg" alt="seta direita"></button>
+            <button id="prev"><img src="/assets/img/arrow.svg" alt="seta esquerda"></button>
+            <button id="next"><img src="/assets/img/arrow.svg" alt="seta direita"></button>
         </div>
 
         <div class="indicators">
@@ -103,9 +104,7 @@
     </section>
 
     <div id="carrossel"></div>
-    
+
     <script src="script.js"></script>
-    <script defer src="../../components/header.js"></script>
-    <script defer src="../../components/carrossel.js"></script>
 </body>
 </html>
