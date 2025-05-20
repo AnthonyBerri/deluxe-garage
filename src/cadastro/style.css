@@ -31,7 +31,7 @@ main{
     background-position: center; /* Centers the crop */
     z-index: -1;
     position: absolute;
-
+    right: 430px;
   }
 
 .form-cadastro {
