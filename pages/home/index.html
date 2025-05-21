@@ -5,106 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deluxe Garage Home Page</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="/components/header.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="/components/header.js" defer></script>
     <script defer src="/components/carrossel.js"></script>
+    <script defer src="/components/mainCard.js"></script>
 </head>
 
-<body>
+<body style="background-color: #e7e7e7;">
 
     <header-component></header-component>
     
-    <!--
-    <section class="banner-section">
-        <video class="videoEntrada" id="meuVideo" width="100%" autoplay muted>            
-            <source src="../img/bmwverde.mp4" type="video/mp4">
-        </video>
-    </section> 
-    -->
+    <main-component></main-component>
 
-    <section class="container">
-        <h1 class="title">Discover the extaordinary</h1>
-        <div class="list">
-            <div class="item active">
-                <div class=" car-image">
-                    <img src="/assets/img/ferrari.png"  alt="Carro 1">
-                </div>
-                <div class="content">
-                    <h2>Ferrari</h2>
-                    <p class="car-name">
-                        Ferrari Purossangue (2024)
-                    </p>
-                    <p class="car-description">
-                        <!--
-                        O Ferrari Purosangue é o primeiro carro de quatro portas e quatro lugares na história da Ferrari, mas modelos com dois assentos traseiros 
-                        desempenharam um papel significativo na estratégia da empresa desde o início. Agora, no culminar de 75 anos de pesquisa de ponta, a Ferrari 
-                        criou um carro único e a encapsulação do DNA do Cavallino Rampante, onde desempenho, prazer de dirigir e conforto coexistem em perfeita harmonia. 
-                        E é por isso que este novo modelo foi chamado Ferrari Purosangue – italiano para puro-sangue.
-                        -->
-                    <button class="information">
-                        Saiba mais  
-                    </button>
-                </div>
-            </div>
-            <div class="item">
-                <div class=" car-image">
-                    <img src="/assets/img/porsche.png"  alt="Carro 1" style="width: 500px; height: 500px;">
-                </div>
-                <div class="content">
-                    <h2>porsche</h2>
-                    <p class="car-name">
-                        911 Carrera GTS (2026)
-                    </p>
-                    <p class="car-description">
-                        <!--
-                        O Porsche 911 Carrera GTS 2026 é um carro esportivo de alto desempenho, com motor turbo de 3.0 litros e 473 cv. Ele combina design icônico, tecnologia avançada e uma experiência de condução emocionante.
-                        Com tração traseira ou integral, acelera de 0 a 100 km/h em apenas 3,1 segundos. O interior é luxuoso, com materiais premium e tecnologia de ponta. O Porsche 911 Carrera GTS é uma verdadeira obra-prima da engenharia automotiva, oferecendo desempenho excepcional e conforto inigualável.
-                        -->
-                    </p>
-                    <button class="information">
-                        Saiba mais  
-                    </button>
-                </div>
-            </div>
-            <div class="item">
-                <div class=" car-image">
-                    <img src="/assets/img/audi.png"  alt="Carro 1">
-                </div>
-                <div class="content">
-                    <h2>Audi RS 5</h2>
-                    <p class="car-name">
-                        RS 5 Sportback Competition Plus Track TFSI quattro tiptronic
-                    </p>
-                    <p class="car-description">
-                        <!--
-                        O Audi RS 5 Sportback Competition Plus Track TFSI quattro tiptronic é um carro esportivo de alto desempenho, com motor V6 biturbo de 2.9 litros e 450 cv. Ele combina design elegante, tecnologia avançada e uma experiência de condução emocionante.
-                        Com tração integral quattro, acelera de 0 a 100 km/h em apenas 3,9 segundos. O interior é luxuoso, com materiais premium e tecnologia de ponta. O Audi RS 5 Sportback Competition Plus Track TFSI quattro tiptronic é uma verdadeira obra-prima da engenharia automotiva, oferecendo desempenho excepcional e conforto inigualável.
-                        -->
-                    <button class="information">
-                        Saiba mais  
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="arrow">
-            <button id="prev"><img src="/assets/img/arrow.svg" alt="seta esquerda"></button>
-            <button id="next"><img src="/assets/img/arrow.svg" alt="seta direita"></button>
-        </div>
-
-        <div class="indicators">
-            <div class="number">01</div>
-            <ul>
-                <li class="active"></li>
-                <li></li>
-                <li></li>
-            </ul>
-
-        </div>
-
-    </section>
-
-    <div id="carrossel"></div>
-
-    <script src="script.js"></script>
 </body>
 </html>
