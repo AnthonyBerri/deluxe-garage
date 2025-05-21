@@ -35,8 +35,16 @@ class HeaderComponent extends HTMLElement {
             </div> 
         </header>
     `;
-}
-    
+    }
+    //chama scripts que estão dentro do html acima, para conecta-los ao codigo após serem gerados.
+    connectedCallback() {
+        const menuBtn = this.shadowRoot.querySelector('.menu-btn');
+        const sidebar = this.shadowRoot.querySelector('.sidebar');
+
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('show');
+        });
+    }
 }
 
 customElements.define('header-component', HeaderComponent);
