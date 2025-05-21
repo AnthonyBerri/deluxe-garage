@@ -4,7 +4,7 @@ class HeaderComponent extends HTMLElement {
     super();
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML =`
-        <link rel="stylesheet" href="/components/header.css">
+        <link rel="stylesheet" href="../../components/header.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <header>
             <button class="menu-btn">☰ </button> 
