@@ -12,8 +12,21 @@ class MainComponent extends HTMLElement {
                 <p>WHEELS</p>
             </div>
             <div class="imageContainer">
-                <img src="../../assets/img/acuraHomePage.png">
-            </div>        
+                <img src="../../assets/img/acuraHomePage.png" height="400px">
+            </div>
+            <div class="cardsContainer">
+                <div>
+                    <a href="../cadastro/cadastro.html">
+                        <img src="../../assets/img/RS6Avant.png">
+                    </a>
+                </div>
+                <div>
+                    <img src="../../assets/img/Series3.png">
+                </div>
+                <div>
+                    <img src="../../assets/img/TT.png">
+                </div>
+            </div>
         </div> 
     </main>
     `;
