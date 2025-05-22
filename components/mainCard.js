@@ -6,8 +6,14 @@ class MainComponent extends HTMLElement {
     shadow.innerHTML =`
     <link rel="stylesheet" href="../../components/mainCard.css">    
     <main>
-        <div>
-            <h1>AAAAAAAAAAAAAAAAAAAAAAAAAAAAA</h1>
+        <div class="card">
+            <div class="titleSubtitle">
+                <h1>WHERE LUXURY MEETS PERFECTION ON</p>
+                <p>WHEELS</p>
+            </div>
+            <div class="imageContainer">
+                <img src="../../assets/img/acuraHomePage.png">
+            </div>        
         </div> 
     </main>
     `;
