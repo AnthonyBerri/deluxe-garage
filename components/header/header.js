@@ -8,14 +8,11 @@ class HeaderComponent extends HTMLElement {
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <header>
             <button class="menu-btn">☰ </button> 
-        
             <p class="logo">DeluxeGarage</p>
-        
-            <div class="login-btn">  <!-- Botão de login estilizado -->
-                <a href="/pages/login/login.html" style="color: inherit; font-size: 35px;">
-                    <i class="bi bi-person-circle"></i>
-                </a>
-            </div>
+            <a href="/pages/login/login.html" class="login">
+                <p>Login</p>
+            </a>
+            
     
             <!-- Sidebar -->
             <div class="sidebar">
