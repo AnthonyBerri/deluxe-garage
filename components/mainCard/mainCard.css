@@ -4,7 +4,7 @@ main {
     align-items: center;
     width: 100%;
     height: auto;
-    padding-top: 150px;
+    padding-top: 100px;
     overflow-X: hidden;
 }
 
@@ -24,6 +24,9 @@ main {
 
 .titleSubtitle{
     display: flex;
+    font-family: "Days One", sans-serif;
+    font-style: normal;
+    font-size: 1.2vw;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -33,7 +36,12 @@ main {
 .imageContainer{
     justify-content: right;
     display: flex;
-    width: 100%;
+    align-items: center;
+    img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
 }
 
 .cardContent{

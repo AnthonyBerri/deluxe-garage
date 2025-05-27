@@ -3,12 +3,39 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: auto;
     grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
 }
 
 .imageContainer {
-    margin-left: 50px;
-    margin-right: 50px;
-    padding-bottom: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    font-size: 0px;
 }
 
+.imageContainer img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.imageContainer:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+    filter: brightness(1.75);
+    font-size: 35px;
+}
+
+.textCard {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    width: 100%;
+    pointer-events: none;
+}
