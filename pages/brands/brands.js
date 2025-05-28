@@ -10,7 +10,7 @@ fetch('brand.json')
 
         if(brand) {
             div.innerHTML = `
-                 <header-component></header-component>
+                <!-- <header-component></header-component> -->
                 <h2>${brand.name}</h2>
                 <img src="${brand.logo}" alt="${brand.name}">
             `;
