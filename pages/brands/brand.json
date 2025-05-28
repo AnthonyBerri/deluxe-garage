@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Ferrari",
+        "logo": "../../assets/img/ferrariLogo.png"
+    },
+    {
+        "name": "Mercedes"
+    },
+    {
+        "name": "BMW"
+    }
+]
