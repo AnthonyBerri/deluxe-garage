@@ -1,7 +1,7 @@
 [
     {
         "name": "Ferrari",
-        "logo": "../../assets/img/ferrariLogo.png"
+        "logo": "/assets/img/ferrariLogo.png"
     },
     {
         "name": "Mercedes"
