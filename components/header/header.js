@@ -17,7 +17,7 @@ class HeaderComponent extends HTMLElement {
                 </a>
             </div>
 
-            <!-- Modal de Login -->
+            <!-- Modal de Logina -->
             <div id="login-modal" class="modal">
                 <div class="modal-content">
                     <h2>Login</h2>
