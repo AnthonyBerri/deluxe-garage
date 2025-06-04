@@ -34,29 +34,29 @@ main{
     right: 430px;
   }
 
+
 .form-cadastro {
-    position: absolute; /* Garante que você possa posicionar o elemento */
-    right: 0; /* Cola o formulário à direita */
-    top: 0; /* Começa do topo */
-    width: 50vw; /* Define a largura como metade da tela */
-    height: 100vh; /* Ocupa toda a altura da tela */
-    background-color: rgba(255, 255, 255); /* Fundo branco */
-    border-radius: 0; /* Remove bordas arredondadas, se necessário */
+    position: absolute; 
+    right: 0; 
+    top: 0; 
+    width: 50vw; 
+    height: 120vh; 
+    background-color: rgba(255, 255, 255); 
+    border-radius: 0; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    display: flex; /* Torna o formulário um contêiner flexível */
-    flex-direction: column; /* Organiza os elementos verticalmente */
-    justify-content: center; /* Centraliza o conteúdo verticalmente */
-    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
 
     
     & h1 {
         display: flex;
         justify-content: start;
         align-items: start;    
-        font-size: 24px;
-        margin-bottom: 20px;
-        color: #333;
+        font-size: 34px;
+        margin-bottom: 10px;
+        color: #080808;
     }
     /* Conteudo do Form */
     & .form-body {   
@@ -65,39 +65,33 @@ main{
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: 60%;
+        height: 50%;
         padding: 20px;
-
-        gap: 10px;
+        gap: 5px;
         
-       /* Estilo do campo de entrada */
-        
-       .radio-group {
-        display: flex;
-        gap: 15px; /* Espaçamento entre os botões */
-        align-items: center; /* Alinha os itens verticalmente */
-        padding: 10px;
-    }
-    
-    .radio-group div {
-        display: flex;
-        align-items: center;
-        gap: 5px; /* Espaçamento entre o botão e o texto */
-    }
-    
-    input[type="radio"] {
-        accent-color: #333; /* Cor do botão de rádio */
-        cursor: pointer;
-    }
-    
-    label {
-        font-size: 14px;
-        color: #333;
-        cursor: pointer;
-    }
+       /* Estilo do campo de entrada */      
+      
+       & .group_row {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 70px;
+            width: 100%;
+            height: 100%;
+            
+          }
           
+          & .form__group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+          }
+          
+          /* Estilo do campo de entrada */
        & .form__group {
-
             position: relative;
             padding: 15px 0 0;
             width: 100%;
@@ -106,7 +100,7 @@ main{
           
           .form__field {
             font-family: inherit;
-            width: 100%;
+            width: 120%;
             border: none;
             border-bottom: 2px solid #9b9b9b;
             outline: 0;
@@ -163,15 +157,103 @@ main{
 
     }
     & .form-footer {
-        
       display: flex;
       flex-direction: column;
       align-items: center;  
       gap: 10px;
-      padding: 10px 0;
-      
+      margin: 10% auto;
+      width: 60%;
+      margin-top: 0;
+
+      & button {
+        width: 70%;
+        height: 50px;
+        background-color: #0c0c0c;
+        color: rgb(253, 251, 251);
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background-color 0.3s, transform 0.3s;
+        margin-bottom: 10px;
+        box-shadow: #020202 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+        &:hover {
+          background-color: #414141;
+          transform: scale(1.05);
+          
+        }
+      }
     }
    
 }
+
+/* Responsividade para telas menores */
+@media (max-width: 1024px) {
+  .fullscreen-bg {
+    right: 0;
+    width: 100vw;
+  }
+  .form-cadastro { 
+    width: 100vw;
+    position: relative;
+    right: 0;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 20px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    padding-top: 40px;
+  }
+  .form-cadastro {
+    width: 100vw;
+    min-width: unset;
+    padding: 15px 5vw;
+    height: 100vh;
+    min-height: 100vh;
+    justify-content: flex-start;
+    padding-top: 20%;
+  }
+  .form-cadastro h1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  .form-cadastro .form-body {
+    padding: 10px 0;
+    width: 100%;
+    height: auto;
+  }
+  .form-cadastro .form__group {
+    max-width: 100%;
+  }
+  .form-footer {
+    gap: 5px;
+    padding: 30px 0;
+   
+  }
+}
+
+@media (max-width: 480px) {
+  .form-cadastro {
+    padding: 10px 2vw;
+  }
+  .form-cadastro h1 {
+    font-size: 18px;
+  }
+  .form-cadastro .form__group {
+    padding: 10px 0 0;
+  }
+  .form-footer {
+    gap: 5px;
+    padding: 30px 0;
+   
+  }
+}
+
+
 
 
