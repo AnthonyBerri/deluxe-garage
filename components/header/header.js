@@ -9,11 +9,32 @@ class HeaderComponent extends HTMLElement {
         <header>
             <button class="menu-btn">☰ </button> 
             <p class="logo">DeluxeGarage</p>
-            <a href="/pages/login/login.html" class="login">
-                <p>Login</p>
-            </a>
-            
-    
+            <div class="login-btn">
+                <a href="#" class="login" id="login-modal-btn">
+                    Login
+                </a>
+            </div>
+
+            <div id="login-modal" class="modal">
+                <div class="modal-content">
+                    <h2>Login</h2>
+                    <p>________________________________</p>
+                    <span class="close-btn">&times;</span> <!-- Botão de fechar movido para dentro -->
+                    <form class="form-login">
+                        <label for="username">Usuário</label>
+                        <input type="text" id="username" name="username" required>
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" name="password" required>
+                        <div class="modal-footer">
+                            <div class="modal-enter">
+                                <button type="submit">Entrar</button>
+                            </div>
+                            <p>Não tem uma conta? <a href="/cadastro/cadastro.html">Cadastre-se</a></p>
+                        </div>    
+                    </form>
+                </div>
+            </div>
+
             <!-- Sidebar -->
             <div class="sidebar">
                 <ul>               
@@ -34,15 +55,37 @@ class HeaderComponent extends HTMLElement {
         </header>
     `;
     }
-    //chama scripts que estão dentro do html acima, para conecta-los ao codigo após serem gerados.
-    connectedCallback() {
-        const menuBtn = this.shadowRoot.querySelector('.menu-btn');
-        const sidebar = this.shadowRoot.querySelector('.sidebar');
+   connectedCallback() {
+    const menuBtn = this.shadowRoot.querySelector('.menu-btn');
+    const sidebar = this.shadowRoot.querySelector('.sidebar');
+    const loginModalBtn = this.shadowRoot.querySelector('#login-modal-btn');
+    const loginModal = this.shadowRoot.querySelector('#login-modal');
+    const closeBtn = this.shadowRoot.querySelector('.close-btn');
 
-        menuBtn.addEventListener('click', () => {
-            sidebar.classList.toggle('show');
-        });
+    if (sessionStorage.getItem('showLoginModal') === 'true') {
+        loginModal.style.display = 'block';
+        sessionStorage.removeItem('showLoginModal');
     }
+
+    menuBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('show');
+    });
+
+    loginModalBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        loginModal.style.display = 'block';
+    });
+
+    closeBtn.addEventListener('click', () => {
+        loginModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === loginModal) {
+            loginModal.style.display = 'none';
+        }
+    });
+}
 }
 
 customElements.define('header-component', HeaderComponent);

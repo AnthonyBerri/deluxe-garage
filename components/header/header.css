@@ -10,7 +10,7 @@ header{
     position: fixed;
 }
 
-.menu-btn {   
+.menu-btn {
     padding: 12px;
     background-color: #2a2a2a;
     color: #ffffff;
@@ -150,6 +150,98 @@ header{
     background-color: #000;
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #000;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: 20%;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 20px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.form-login label {
+    text-align: left;
+    font-weight: bold;
+}
+
+.form-login input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-footer {
+    margin-top: 20px;
+}
+
+.modal-footer .modal-enter button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #acacac;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    gap: 20px;
+}
+
+.modal-footer .modal-enter button:hover {
+    background-color: #797979;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #aaa;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+}
+
+.modal-footer p a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.modal-footer p a:hover {
+    text-decoration: underline; 
+}
+
 @media (max-width: 768px) {
     header {
         display: flex;
@@ -173,6 +265,15 @@ header{
         cursor: pointer;
         z-index: 11;
         border: none;
-        font-family: 'Franklin Gothic medium', 'Arial Narrow', Arial, sans-serif
+        font-family: 'Franklin Gothic medium', 'Arial Narrow', Arial, sans-serif  
+    }
+
+    .modal-content {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .close-btn {
+        font-size: 18px;
     }
 }
