@@ -19,7 +19,7 @@ class HeaderComponent extends HTMLElement {
                 <ul>               
                     <li><a href="/pages/home/index.html">Home</a></li>
                     <li><a href="/pages/home/index.html">Pedidos</a></li>
-                    <li><a href="#">Quem Somos?</a></li>
+                    <li><a href="/pages/quemSomos/index.html">Quem Somos?</a></li>
 
                     <h1>Marcas</h1>
 
