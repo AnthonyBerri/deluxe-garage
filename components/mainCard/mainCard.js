@@ -9,10 +9,11 @@ class MainComponent extends HTMLElement {
         <div class="card">
             <div class="titleSubtitle">
                 <h1>WHERE LUXURY MEETS PERFECTION ON <br> WHEELS</p>
+                <h6>This is deluxe garage</h6>
                 <p></p>
             </div>
             <div class="imageContainer">
-                <img src="../../assets/img/acuraHomePage.png" height="400px">
+                <img src="../../assets/img/acuraHomePage.png" height="300px">
             </div>
             <div class="cardContent">
                 <cards-container></cards-container>

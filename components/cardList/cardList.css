@@ -12,7 +12,14 @@
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 20px;
-    font-size: 0px;
+    font-display: none;
+    font-size: 35px;
+    position: relative;
+    transition: filter 0.1s, transform 0.1s;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .imageContainer img {
@@ -22,11 +29,12 @@
     object-fit: cover;
 }
 
-.imageContainer:hover {
+.imageContainer:hover{
     transform: scale(1.05);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.1s ease-in-out;
     filter: brightness(1.75);
-    font-size: 35px;
+    display: flex;
+    
 }
 
 .textCard {
@@ -35,7 +43,11 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: white;
+    color: rgba(255, 255, 255, 0.0);
     width: 100%;
     pointer-events: none;
+}
+
+div .imageContainer:hover .textCard {
+    color: rgba(255, 255, 255, 1.0);
 }
