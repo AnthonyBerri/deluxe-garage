@@ -5,3 +5,27 @@
 * {
     margin: 0;
 }
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding-top: 100px;
+    overflow-X: hidden;
+}
+
+.card{
+    border-radius: 16px;
+    align-items: top;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    width: 80%;
+    height: auto;
+    background-color: #D7D7D7;
+    color:black;
+    box-shadow: 4px 6px 5px rgba(54, 54, 54, 0.5);
+    overflow-x: hidden;
+}
