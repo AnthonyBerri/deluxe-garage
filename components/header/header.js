@@ -29,7 +29,7 @@ class HeaderComponent extends HTMLElement {
                             <div class="modal-enter">
                                 <button type="submit">Entrar</button>
                             </div>
-                            <p>Não tem uma conta? <a href="/cadastro/cadastro.html">Cadastre-se</a></p>
+                            <p>Não tem uma conta? <a href="/pages/cadastro/cadastro.html">Cadastre-se</a></p>
                         </div>    
                     </form>
                 </div>
