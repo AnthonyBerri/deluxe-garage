@@ -172,12 +172,14 @@ header{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
 }
-
+.login-modal-p {  
+    margin: 5px;
+}
 .form-login {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    padding-top: 20px;
+    padding-top: 10px;
     width: 70%;
     margin: 0 auto;
 }
@@ -218,7 +220,6 @@ header{
     background-color: #414141;
     color: #ffffff;
 }
-
 /* Social Media Buttons */
 .social-btn{
     display: flex;
@@ -306,7 +307,8 @@ header{
 
 .close-btn:hover,
 .close-btn:focus {
-    color: black;
+    
+    color: #e74c3c;
 }
 
 .modal-footer p a {
@@ -316,6 +318,106 @@ header{
 
 .modal-footer p a:hover {
     text-decoration: underline; 
+}
+
+/* Modal de recuperação de senha  */
+#forgot-password-modal .modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: 35%;
+    height: 80%;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+#forgot-password-modal .modal-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 10px 0;
+    margin-bottom: 50px;
+}
+
+#forgot-password-modal h2 {
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+    color: #222;
+}
+
+#forgot-password-modal .close-forgot-btn {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 1.5rem;
+    color: #888;
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: color 0.2s;
+}
+
+#forgot-password-modal .forgot-password-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#forgot-password-modal .close-forgot-btn:hover {
+    color: #e74c3c;
+}
+
+#forgot-password-form label {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 6px;
+    display: block;
+    text-align: left;
+}
+
+#forgot-password-form input[type="email"] {
+    width: 70%;
+    padding: 8px 10px;
+    margin-bottom: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border 0.2s;
+}
+#forgot-password-form input[type="email"]:focus {
+    border: 1.5px solid #414141;
+    outline: none;
+}
+
+#forgot-password-form button[type="submit"] {
+    width: 70%;
+    padding: 10px 0;
+    background: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 8px;
+}
+#forgot-password-form button[type="submit"]:hover {
+    background: #414141;
+    color: #ffffff;
+    transition:  0.3s;
+}
+
+#forgot-password-success {
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 500;
+    color: #27ae60 !important;
+    font-size: 1rem;
+    display: none;
 }
 
 @media (max-width: 768px) {
@@ -334,6 +436,7 @@ header{
         grid-template-columns: 1fr;
         justify-items: center;
     }
+
     .menu-btn{   
         padding-right: 10px;
         color: #ffffff;
@@ -345,12 +448,19 @@ header{
     }
 
     .modal-content {
-        width: 45%;
+        width: 60%;
+        max-width: 60%;
         padding: 15px;
     }
 
     .close-btn {
         font-size: 18px;
+    }
+
+    #forgot-password-modal .modal-content {
+        width: 60%;
+        max-width: 60%;
+        padding: 15px;
     }
 }
 
@@ -381,11 +491,18 @@ header{
     }
 
     .modal-content {
-        width: 55%;
+        width: 60%;
+        max-width: 60%;
         padding: 15px;
     }
 
     .close-btn {
         font-size: 18px;
+    }
+
+    #forgot-password-modal .modal-content {
+        width: 60%;
+        max-width: 60%;
+        padding: 15px;
     }
 }
