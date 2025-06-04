@@ -1,3 +1,4 @@
+// Dados dos carros
 const carRequests = [
     {
         id: 1,
@@ -35,7 +36,7 @@ function getCarBrand(model) {
     if (model.includes('Audi')) return 'AUDI';
     if (model.includes('Lamborghini')) return 'LAMBORGHINI';
     if (model.includes('Mercedes')) return 'MERCEDES';
-    return 'CAR'; 
+    return 'CAR';
 }
 
 function renderCards() {
@@ -50,18 +51,14 @@ function renderCards() {
     carRequests.forEach(request => {
         const card = document.createElement('div');
         card.className = 'request-card';
-     
-        const brandName = getCarBrand(request.model);
         
         card.innerHTML = `
             <div class="car-image">
-                <img src="${request.image}" alt="${request.model}" class="car-img"/>
+                <img src="${request.image}" alt="${request.model}" />
             </div>
-            ...
             <div class="card-content">
                 <div class="request-info">
-                   <h3>${request.model}</h3>
-                   <small>${brandName}</small>
+                    <h3>${request.model}</h3>
                     <p>${request.location}</p>
                     <div class="status ${request.status.toLowerCase()}">${request.status}</div>
                 </div>
@@ -75,10 +72,10 @@ function renderCards() {
                         <p>${request.time}</p>
                     </div>
                 </div>
-            </div>
-            <div class="card-actions">
-                <button class="details-btn" onclick="showDetails(${request.id})">Ver Detalhes</button>
-                <button class="cancel-btn" onclick="cancelRequest(${request.id})">Cancelar</button>
+                <div class="card-actions">
+                    <button class="details-btn" onclick="showDetails(${request.id})">Ver Detalhes</button>
+                    <button class="cancel-btn" onclick="cancelRequest(${request.id})">Cancelar</button>
+                </div>
             </div>
         `;
         
@@ -165,11 +162,11 @@ function showNotification(message) {
     notification.className = 'notification';
     notification.textContent = message;
     document.body.appendChild(notification);
-    
+
     setTimeout(() => {
         notification.classList.add('show');
     }, 10);
-    
+
     setTimeout(() => {
         notification.classList.remove('show');
         setTimeout(() => {
@@ -179,63 +176,120 @@ function showNotification(message) {
 }
 
 function addNewRequest() {
-    const model = prompt('Digite o modelo do carro (ex: Porsche 911, BMW Series 3, Ferrari 488):');
-    if (!model) return;
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    modal.innerHTML = `
+        <div class="modal-content add-request-modal">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Adicionar Novo Pedido</h2>
+            <div class="modal-body">
+                <form id="add-request-form">
+                    <div class="form-group">
+                        <label for="car-model">Modelo do Carro</label>
+                        <select id="car-model" required>
+                            <option value="">Selecione um modelo</option>
+                            <option value="Porsche 911 GT3 RS">Porsche 911 GT3 RS</option>
+                            <option value="BMW Series 3">BMW Series 3</option>
+                            <option value="Ferrari 488">Ferrari 488</option>
+                            <option value="Audi RS6 Avant">Audi RS6 Avant</option>
+                            <option value="Audi TT">Audi TT</option>
+                            <option value="Lamborghini Aventador">Lamborghini Aventador</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="location">Local de Retirada</label>
+                        <input type="text" id="location" placeholder="Ex: São Paulo, SP" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">Data</label>
+                            <input type="date" id="date" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="time">Hora</label>
+                            <input type="time" id="time" required>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="primary-btn" id="submit-request">Adicionar Pedido</button>
+                <button class="secondary-btn" onclick="closeModal()">Cancelar</button>
+            </div>
+        </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    const submitBtn = document.getElementById('submit-request');
+    submitBtn.addEventListener('click', function() {
+        const model = document.getElementById('car-model').value;
+        const location = document.getElementById('location').value;
+        const date = document.getElementById('date').value;
+        const time = document.getElementById('time').value;
+        
+        if (!model || !location || !date || !time) {
+            showFormError('Por favor, preencha todos os campos.');
+            return;
+        }
+        
+        const dateObj = new Date(date);
+        const formattedDate = `${dateObj.getDate().toString().padStart(2, '0')}/${(dateObj.getMonth() + 1).toString().padStart(2, '0')}/${dateObj.getFullYear()}`;
+        
+        const newRequest = {
+            id: carRequests.length + 1,
+            model: model,
+            image: getCarImageByModel(model),
+            location: location,
+            date: formattedDate,
+            time: time,
+            status: 'Pendente'
+        };
+        
+        carRequests.push(newRequest);
+        renderCards();
+        closeModal();
+        showNotification('Novo pedido adicionado com sucesso!');
+    });
+}
+
+function showFormError(message) {
+    let errorElement = document.querySelector('.form-error');
     
-    const location = prompt('Digite o local de retirada:');
-    if (!location) return;
+    if (!errorElement) {
+        errorElement = document.createElement('div');
+        errorElement.className = 'form-error';
+        const form = document.getElementById('add-request-form');
+        form.insertAdjacentElement('beforebegin', errorElement);
+    }
     
-    const date = prompt('Digite a data (DD/MM/AAAA):');
-    if (!date) return;
+    errorElement.textContent = message;
+    errorElement.style.opacity = '1';
     
-    const time = prompt('Digite a hora (HH:MM):');
-    if (!time) return;
-    
-    const newRequest = {
-        id: carRequests.length + 1,
-        model: model,
-        image: getCarImageByModel(model),
-        location: location,
-        date: date,
-        time: time,
-        status: 'Pendente'
-    };
-    
-    carRequests.push(newRequest);
-    renderCards();
-    showNotification('Novo pedido adicionado com sucesso!');
+    setTimeout(() => {
+        errorElement.style.opacity = '0';
+    }, 3000);
 }
 
 function getCarImageByModel(model) {
     const images = {
-        'Porsche 911': 'assets/img/porsche.png',
-        'BMW Series 3': 'assets/img/Series3.png',
-        'Ferrari 488': 'assets/img/ferrari.png',
-        'Audi RS6 Avant': 'assets/img/RS6Avant.png',
-        'Audi TT': 'assets/img/TT.png',
-        'Audi A4': 'assets/img/audi.png',
-        'Lamborghini Aventador': 'assets/img/lamborghiniLogo.png'
+        'Porsche 911 GT3 RS': '../../assets/img/porsche.png',
+        'BMW Series 3': '../../assets/img/Series3.png',
+        'Ferrari 488': '../../assets/img/ferrari.png',
+        'Audi RS6 Avant': '../../assets/img/RS6Avant.png',
+        'Audi TT': '../../assets/img/TT.png',
+        'Lamborghini Aventador': '../../assets/img/lamborghiniLogo.png'
     };
-    
-    for (const [key, value] of Object.entries(images)) {
-        if (model.toLowerCase().includes(key.toLowerCase().split(' ')[0])) {
-            return value;
-        }
-    }
-    
-    return 'assets/img/porsche.png'; 
+
+    return images[model] || 'assets/img/porsche.png';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     renderCards();
+
     document.querySelector('.login-btn').addEventListener('click', toggleLogin);
- 
-    const mainContent = document.querySelector('.main-content');
-    const addButton = document.createElement('button');
-    addButton.textContent = 'Adicionar Novo Pedido';
-    addButton.className = 'primary-btn';
-    addButton.style.marginBottom = '24px';
-    addButton.onclick = addNewRequest;
-    
-    mainContent.insertBefore(addButton, document.querySelector('.requests-container'));
+    document.querySelector('.add-btn').addEventListener('click', addNewRequest);
 });
