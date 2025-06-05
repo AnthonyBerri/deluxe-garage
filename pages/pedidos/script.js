@@ -12,7 +12,7 @@ const carRequests = [
     {
         id: 2,
         model: "BMW Series 3",
-        image: "../../assets/img/Series3.png",
+        image: "../../assets/img/Series3..png",
         location: "Rio de Janeiro, RJ",
         date: "20/06/2025",
         time: "14:30",
@@ -22,7 +22,7 @@ const carRequests = [
         id: 3,
         model: "Ferrari 488",
         image: "../../assets/img/ferrari.png",
-        location: "Belo Horizonte, MG",
+        location: "Joinville, SC",
         date: "25/06/2025",
         time: "10:15",
         status: "Confirmado"
@@ -74,7 +74,7 @@ function renderCards() {
                 </div>
                 <div class="card-actions">
                     <button class="details-btn" onclick="showDetails(${request.id})">Ver Detalhes</button>
-                    <button class="cancel-btn" onclick="cancelRequest(${request.id})">Cancelar</button>
+                    <button class="cancel-btn" onclick="showCancelModal(${request.id})">Cancelar</button>
                 </div>
             </div>
         `;
@@ -132,6 +132,50 @@ function closeModal() {
     const modal = document.querySelector('.modal');
     if (modal) {
         document.body.removeChild(modal);
+    }
+}
+
+function showCancelModal(id) {
+    const request = carRequests.find(req => req.id === id);
+    if (!request) return;
+
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    modal.innerHTML = `
+        <div class="modal-content cancel-modal">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Cancelar Pedido</h2>
+            <div class="modal-body">
+                <div class="cancel-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#c62828" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="15" y1="9" x2="9" y2="15"></line>
+                        <line x1="9" y1="9" x2="15" y2="15"></line>
+                    </svg>
+                </div>
+                <div class="cancel-message">
+                    <h3>Tem certeza que deseja cancelar este pedido?</h3>
+                    <p>O pedido <strong>${request.model}</strong> será removido da sua lista.</p>
+                    <p>Esta ação não pode ser desfeita.</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="danger-btn" onclick="confirmCancel(${id})">Sim, Cancelar Pedido</button>
+                <button class="secondary-btn" onclick="closeModal()">Não, Manter Pedido</button>
+            </div>
+        </div>
+    `;
+
+    document.body.appendChild(modal);
+}
+
+function confirmCancel(id) {
+    const index = carRequests.findIndex(req => req.id === id);
+    if (index !== -1) {
+        carRequests.splice(index, 1);
+        renderCards();
+        closeModal();
+        showNotification('Pedido cancelado com sucesso!');
     }
 }
 
@@ -286,7 +330,6 @@ function getCarImageByModel(model) {
 
     return images[model] || 'assets/img/porsche.png';
 }
-
 document.addEventListener('DOMContentLoaded', () => {
     renderCards();
 

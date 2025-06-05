@@ -9,7 +9,7 @@ class HeaderComponent extends HTMLElement {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <header>
             <button class="menu-btn">☰ </button> 
-            <p class="logo">DeluxeGarage</p>
+            <p class="logo">DELUXE GARAGE</p>
             <div class="login-btn">
                 <a href="#" class="login" id="login-modal-btn">
                     Login
@@ -81,7 +81,7 @@ class HeaderComponent extends HTMLElement {
                     <li><a href="#">Ferrari</a></li>
                     <li><a href="#">Lamborghini</a></li>
                     <li><a href="#">Mercedes</a></li>
-                    <li><a href="#">Porsche</a></li>
+                     <li><a href="/pages/reservaPORSCHE/porsche.html">Porsche</a></li>
                 </ul>
             </div> 
         </header>
