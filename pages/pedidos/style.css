@@ -11,6 +11,23 @@
   justify-content: center;
   padding: 12px;
 }
+
+/* ===== ESTILOS ORIGINAIS MANTIDOS ===== */
+.car-img {
+  width: 160px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.car-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  position: relative;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -96,6 +113,7 @@ body {
     height: 192px;
     width: 100%;
     position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .car-image {
@@ -469,6 +487,226 @@ body {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
+/* ===== NOVOS ESTILOS PARA GARAGEM VIRTUAL ===== */
+
+/* Estatísticas da Garagem */
+.garage-stats-section {
+    margin-bottom: 32px;
+}
+
+.garage-stats {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+    border-radius: 12px;
+    color: white;
+    min-width: 150px;
+    transition: transform 0.2s;
+}
+
+.stat-item:hover {
+    transform: translateY(-2px);
+}
+
+.stat-item.garage-stat {
+    background: linear-gradient(135deg, #376148, #4a7c59);
+}
+
+.stat-item.value-stat {
+    background: linear-gradient(135deg, #e80101, #d06d6d);
+}
+
+.stat-number {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Badge da Garagem */
+.garage-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: linear-gradient(45deg, #376148, #4a7c59);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+/* Card da Garagem */
+.garage-item {
+    border-left: 4px solid #376148;
+}
+
+.garage-item:hover {
+    border-left-color: #4a7c59;
+}
+
+/* Badge do Plano */
+.plan-badge {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    color: #376148;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: bold;
+    margin-top: 8px;
+    display: inline-block;
+    border: 1px solid #376148;
+}
+
+/* Botão Finalizar */
+.finalize-btn {
+    background: linear-gradient(45deg, #376148, #4a7c59);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.finalize-btn:hover {
+    background: linear-gradient(45deg, #4a7c59, #376148);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(55, 97, 72, 0.3);
+}
+
+/* Botão Limpar Garagem */
+.clear-garage-btn {
+    background-color: #e80101;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 12px;
+    margin-bottom: 24px;
+    transition: all 0.2s;
+}
+
+.clear-garage-btn:hover {
+    background-color: #d06d6d;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(232, 1, 1, 0.3);
+}
+
+/* Garagem Vazia */
+.empty-garage {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.empty-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+.empty-title {
+    font-size: 24px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.empty-message {
+    color: #999;
+    margin-bottom: 30px;
+}
+
+.btn-add-car {
+    background: linear-gradient(45deg, #376148, #4a7c59);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-add-car:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(55, 97, 72, 0.3);
+}
+
+/* Detalhes do Plano no Modal */
+.plan-details-modal {
+    margin-top: 24px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 8px;
+    border-left: 4px solid #376148;
+}
+
+.plan-details-modal h4 {
+    color: #376148;
+    margin-bottom: 16px;
+}
+
+.plan-info-modal {
+    text-align: center;
+}
+
+.plan-title-modal {
+    font-weight: bold;
+    color: #376148;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.plan-price-modal {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e80101;
+    margin-bottom: 16px;
+}
+
+.plan-features-modal {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.plan-features-modal li {
+    padding: 6px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.plan-features-modal li:last-child {
+    border-bottom: none;
+}
+
+/* Status da Garagem */
+.status.na-garagem {
+    background-color: #e8f5e8;
+    color: #376148;
+}
+
+/* Animações */
 @keyframes modalFadeIn {
     from {
         opacity: 0;
@@ -480,6 +718,27 @@ body {
     }
 }
 
+/* Hover Effects */
+.add-btn:hover,
+.details-btn:hover,
+.primary-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cancel-btn:hover,
+.secondary-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.request-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
     .request-card {
         flex-direction: column;
@@ -528,23 +787,59 @@ body {
     .modal-content {
         max-height: 95vh;
     }
+
+    /* Responsive para Garagem */
+    .garage-stats {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .stat-item {
+        min-width: 200px;
+    }
+
+    .clear-garage-btn {
+        margin-left: 0;
+        margin-top: 12px;
+        width: 100%;
+    }
+
+    .garage-badge {
+        font-size: 9px;
+        padding: 3px 6px;
+    }
+
+    .plan-badge {
+        font-size: 10px;
+        padding: 3px 6px;
+    }
 }
 
-.add-btn:hover,
-.details-btn:hover,
-.primary-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
+@media (max-width: 480px) {
+    .empty-icon {
+        font-size: 48px;
+    }
 
-.cancel-btn:hover,
-.secondary-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
+    .empty-title {
+        font-size: 20px;
+    }
 
-.request-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: transform 0.2s, box-shadow 0.2s;
+    .btn-add-car {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+
+    .stat-item {
+        min-width: 150px;
+        padding: 15px;
+    }
+
+    .stat-number {
+        font-size: 20px;
+    }
+
+    .stat-label {
+        font-size: 12px;
+    }
 }

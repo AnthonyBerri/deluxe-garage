@@ -47,18 +47,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     colorButtons.forEach(button => {
         button.addEventListener('click', function() {
-        
             colorButtons.forEach(btn => btn.classList.remove('active'));
-            
             this.classList.add('active');
-            
             const color = this.getAttribute('data-color');
             updateCarDisplay(color);
         });
     });
     
     function updateCarDisplay(color) {
-
         const colorConfig = {
             white: {
                 name: 'Porsche 911 - Branco Pérola',
@@ -107,8 +103,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 200);
         
         carName.style.animation = 'colorGlow 0.8s ease-in-out';
-        
-       
     }
     
     const planItems = document.querySelectorAll('.plan-item');
@@ -117,13 +111,10 @@ document.addEventListener('DOMContentLoaded', function() {
         item.addEventListener('click', function() {
             const planType = this.getAttribute('data-plan');
             
-            
             if (this.classList.contains('selected')) {
                 showPlanDetails(planType);
             } else {
-               
                 planItems.forEach(plan => plan.classList.remove('selected'));
-            
                 this.classList.add('selected');
             }
         });
@@ -161,7 +152,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     const cancelBtn = document.querySelector('.btn-cancel');
-    
     cancelBtn.addEventListener('click', function() {
         document.getElementById('cancelModal').style.display = 'block';
     });
@@ -185,39 +175,81 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        showSuccessMessage(local, data, hora, selectedPlan, selectedColor);
+        saveToGarage(local, data, hora, selectedPlan, selectedColor);
     });
     
-    function showSuccessMessage(local, data, hora, selectedPlan, selectedColor) {
-        const modal = document.getElementById('successModal');
-        const bookingDetails = document.getElementById('bookingDetails');
-        
+    function saveToGarage(local, data, hora, selectedPlan, selectedColor) {
         const planType = selectedPlan.getAttribute('data-plan');
         const plan = plansData[planType];
+        
         const colorNames = {
             white: 'Branco Pérola',
             black: 'Preto Fosco',
             red: 'Vermelho Racing'
         };
         
+        const order = {
+            id: 'POR-' + Math.random().toString(36).substr(2, 9).toUpperCase(),
+            car: 'Porsche 911',
+            color: selectedColor,
+            colorName: colorNames[selectedColor],
+            plan: plan,
+            planType: planType,
+            local: local,
+            data: data,
+            hora: hora,
+            status: 'Na Garagem',
+            timestamp: new Date().toISOString(),
+            image: '../../assets/img/porsche.png'
+        };
+        
+        let garage = JSON.parse(localStorage.getItem('deluxeGarage')) || [];
+        garage.push(order);
+        localStorage.setItem('deluxeGarage', JSON.stringify(garage));
+        
+        showSuccessWithGarage(order);
+    }
+    
+    function showSuccessWithGarage(order) {
+        const modal = document.getElementById('successModal');
+        const bookingDetails = document.getElementById('bookingDetails');
+        
         bookingDetails.innerHTML = `
-            <h4>📋 Detalhes da Reserva:</h4>
-            <p><strong>🚗 Veículo:</strong> Porsche 911 - ${colorNames[selectedColor]}</p>
-            <p><strong>📍 Local:</strong> ${local}</p>
-            <p><strong>📅 Data:</strong> ${data}</p>
-            <p><strong>🕐 Horário:</strong> ${hora}</p>
-            <p><strong>💎 Plano:</strong> ${plan.title}</p>
-            <p><strong>💰 Valor:</strong> ${plan.price}</p>
-            <hr style="margin: 15px 0;">
-            <p><strong>📧 Confirmação enviada para seu e-mail!</strong></p>
-            <p style="color: #666; font-size: 14px;">Número da reserva: #${Math.random().toString(36).substr(2, 9).toUpperCase()}</p>
+            <div class="success-content">
+                <h4>🏁 Porsche Adicionado à Garagem!</h4>
+                <div class="car-summary">
+                    <div class="car-info">
+                        <p><strong>🚗 Veículo:</strong> ${order.car} - ${order.colorName}</p>
+                        <p><strong>📍 Local:</strong> ${order.local}</p>
+                        <p><strong>📅 Data:</strong> ${order.data}</p>
+                        <p><strong>🕐 Horário:</strong> ${order.hora}</p>
+                        <p><strong>💎 Plano:</strong> ${order.plan.title}</p>
+                        <p><strong>💰 Valor:</strong> ${order.plan.price}</p>
+                    </div>
+                </div>
+                <div class="garage-status">
+                    <div class="status-badge">🏠 Status: Na Garagem Virtual</div>
+                    <p class="order-id">ID do Pedido: <strong>${order.id}</strong></p>
+                </div>
+                <div class="action-buttons-modal">
+                    <button class="btn-garage" onclick="goToGarage()">
+                        🏁 Ver Minha Garagem
+                    </button>
+                    <button class="btn-continue" onclick="closeSuccessModal()">
+                        ➕ Adicionar Outro Carro
+                    </button>
+                </div>
+            </div>
         `;
         
         modal.style.display = 'block';
     }
     
+    window.goToGarage = function() {
+        window.location.href = '../pedidos/pedidos.html';
+    }
+    
     function showErrorMessage(message) {
-
         const toast = document.createElement('div');
         toast.className = 'error-toast';
         toast.innerHTML = `⚠️ ${message}`;
@@ -234,10 +266,7 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         
         document.body.appendChild(toast);
-        
-        setTimeout(() => {
-            toast.remove();
-        }, 3000);
+        setTimeout(() => toast.remove(), 3000);
     }
     
     window.closePlanModal = function() {
@@ -249,7 +278,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     window.confirmCancel = function() {
-
         document.getElementById('local').value = '';
         document.getElementById('data').value = '';
         document.getElementById('hora').value = '';
@@ -259,9 +287,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.color-btn.white').classList.add('active');
         
         updateCarDisplay('white');
-        
         window.closeCancelModal();
-
+        
         const toast = document.createElement('div');
         toast.className = 'cancel-toast';
         toast.innerHTML = '✅ Reserva cancelada com sucesso!';
@@ -278,10 +305,7 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         
         document.body.appendChild(toast);
-        
-        setTimeout(() => {
-            toast.remove();
-        }, 3000);
+        setTimeout(() => toast.remove(), 3000);
     }
     
     window.closeSuccessModal = function() {
@@ -300,129 +324,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const dataInput = document.getElementById('data');
     dataInput.addEventListener('input', function(e) {
         let value = e.target.value.replace(/\D/g, '');
-        
-        if (value.length > 8) {
-            value = value.slice(0, 8);
-        }
-        
+        if (value.length > 8) value = value.slice(0, 8);
         if (value.length >= 4) {
             value = value.slice(0, 2) + '/' + value.slice(2, 4) + '/' + value.slice(4);
         } else if (value.length >= 2) {
             value = value.slice(0, 2) + '/' + value.slice(2);
         }
-        
         e.target.value = value;
     });
     
     const horaInput = document.getElementById('hora');
     horaInput.addEventListener('input', function(e) {
         let value = e.target.value.replace(/\D/g, '');
-        
-        if (value.length > 4) {
-            value = value.slice(0, 4);
-        }
-        
+        if (value.length > 4) value = value.slice(0, 4);
         if (value.length >= 2) {
             value = value.slice(0, 2) + ':' + value.slice(2);
         }
-        
         e.target.value = value;
     });
     
     updateCarDisplay('white');
-    
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes slideInRight {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-        
-        @keyframes colorGlow {
-            0% {
-                transform: scale(1);
-                filter: brightness(1);
-            }
-            50% {
-                transform: scale(1.05);
-                filter: brightness(1.2);
-            }
-            100% {
-                transform: scale(1);
-                filter: brightness(1);
-            }
-        }
-        
-        .car-name {
-            position: relative;
-            display: inline-block;
-            font-size: 28px !important;
-            font-weight: bold !important;
-            margin-bottom: 5px !important;
-            padding: 10px 20px;
-            border-radius: 12px;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            transition: all 0.5s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
-        .car-name::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: inherit;
-            border-radius: inherit;
-            opacity: 0.1;
-            z-index: -1;
-        }
-        
-        .plan-details {
-            text-align: left;
-        }
-        
-        .plan-price-big {
-            font-size: 24px;
-            font-weight: bold;
-            color: #376148;
-            text-align: center;
-            margin-bottom: 20px;
-            padding: 10px;
-            background-color: #f8f9fa;
-            border-radius: 8px;
-        }
-        
-        .features-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .features-list li {
-            padding: 8px 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .features-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .plan-note {
-            background-color: #e3f2fd;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 15px;
-            border-left: 4px solid #376148;
-        }
-    `;
-    document.head.appendChild(style);
 });
