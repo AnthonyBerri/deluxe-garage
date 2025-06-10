@@ -2,7 +2,13 @@
     {
         "id": "1",
         "name": "Ferrari",
-        "logo": "/assets/img/ferrariLogo.png"
+        "logo": "/assets/img/ferrariLogo.png",
+        "cars": [
+            {
+                "name": "Purosangue",
+                "img": "/assets/img/ferrariPurosangue.jpg"
+            }
+        ] 
     },
     {
         "id": "2",
