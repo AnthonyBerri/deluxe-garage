@@ -345,3 +345,166 @@ document.addEventListener('DOMContentLoaded', function() {
     
     updateCarDisplay('white');
 });
+
+function validarFormulario() {
+
+  const local = document.getElementById("local").value.trim()
+  const data = document.getElementById("data").value.trim()
+  const hora = document.getElementById("hora").value.trim()
+  const planSelecionado = document.querySelector(".plan-item.selected")
+
+  const camposVazios = []
+
+  if (!local) {
+    camposVazios.push("Local de Retirada")
+  }
+
+  if (!data) {
+    camposVazios.push("Data")
+  }
+
+  if (!hora) {
+    camposVazios.push("Hora")
+  }
+
+  if (!planSelecionado) {
+    camposVazios.push("Plano de Aluguel")
+  }
+
+  // Se tem campos vazios, mostra o aviso
+  if (camposVazios.length > 0) {
+    mostrarAvisoPreenchimento(camposVazios)
+    return false
+  }
+
+  return true
+}
+
+function mostrarAvisoPreenchimento(camposVazios) {
+  const avisoExistente = document.querySelector(".aviso-preenchimento")
+  if (avisoExistente) {
+    avisoExistente.remove()
+  }
+
+  const aviso = document.createElement("div")
+  aviso.className = "aviso-preenchimento"
+
+  let listaCampos = ""
+  camposVazios.forEach((campo) => {
+    listaCampos += `<li>📝 ${campo}</li>`
+  })
+
+  aviso.innerHTML = `
+        <div class="aviso-overlay">
+            <div class="aviso-conteudo">
+                <div class="aviso-icone">⚠️</div>
+                <h3 class="aviso-titulo">Ops! Faltam algumas informações</h3>
+                <p class="aviso-texto">
+                    Para continuar com sua reserva, você precisa preencher:
+                </p>
+                <ul class="aviso-lista">
+                    ${listaCampos}
+                </ul>
+                <div class="aviso-botoes">
+                    <button class="btn-entendi" onclick="fecharAviso()">
+                        ✅ Entendi, vou preencher
+                    </button>
+                </div>
+            </div>
+        </div>
+    `
+
+  document.body.appendChild(aviso)
+
+  setTimeout(() => {
+    aviso.classList.add("mostrar")
+  }, 10)
+}
+
+function fecharAviso() {
+  const aviso = document.querySelector(".aviso-preenchimento")
+  if (aviso) {
+    aviso.classList.add("esconder")
+    setTimeout(() => {
+      aviso.remove()
+    }, 300)
+  }
+}
+function destacarCamposVazios() {
+  document.querySelectorAll(".campo-obrigatorio").forEach((campo) => {
+    campo.classList.remove("campo-obrigatorio")
+  })
+
+  const local = document.getElementById("local")
+  const data = document.getElementById("data")
+  const hora = document.getElementById("hora")
+  const planSelecionado = document.querySelector(".plan-item.selected")
+
+  if (!local.value.trim()) {
+    local.classList.add("campo-obrigatorio")
+  }
+
+  if (!data.value.trim()) {
+    data.classList.add("campo-obrigatorio")
+  }
+
+  if (!hora.value.trim()) {
+    hora.classList.add("campo-obrigatorio")
+  }
+
+  if (!planSelecionado) {
+    document.querySelectorAll(".plan-item").forEach((plan) => {
+      plan.classList.add("plano-obrigatorio")
+    })
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const btnAgendar = document.querySelector(".btn-schedule")
+
+  btnAgendar.addEventListener("click", (e) => {
+    e.preventDefault()
+
+    if (validarFormulario()) {
+      
+      processarAgendamentoNormal()
+    } else {
+      
+      destacarCamposVazios()
+    }
+  })
+})
+
+function processarAgendamentoNormal() {
+
+  const local = document.getElementById("local").value
+  const data = document.getElementById("data").value
+  const hora = document.getElementById("hora").value
+  const selectedPlan = document.querySelector(".plan-item.selected")
+  const selectedColor = document.querySelector(".color-btn.active").getAttribute("data-color")
+
+  saveToGarage(local, data, hora, selectedPlan, selectedColor)
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  ;["local", "data", "hora"].forEach((id) => {
+    const campo = document.getElementById(id)
+    if (campo) {
+      campo.addEventListener("input", function () {
+        this.classList.remove("campo-obrigatorio")
+      })
+    }
+  })
+  document.querySelectorAll(".plan-item").forEach((plan) => {
+    plan.addEventListener("click", () => {
+      document.querySelectorAll(".plan-item").forEach((p) => {
+        p.classList.remove("plano-obrigatorio")
+      })
+    })
+  })
+})
+
+function saveToGarage(local, data, hora, selectedPlan, selectedColor) {
+  console.log("Reserva salva:", local, data, hora, selectedPlan, selectedColor)
+}
