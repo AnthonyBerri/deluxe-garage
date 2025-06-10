@@ -1,12 +1,15 @@
 [
     {
+        "id": "1",
         "name": "Ferrari",
         "logo": "/assets/img/ferrariLogo.png"
     },
     {
+        "id": "2",
         "name": "Mercedes"
     },
     {
+        "id": "3",
         "name": "BMW"
     }
 ]
