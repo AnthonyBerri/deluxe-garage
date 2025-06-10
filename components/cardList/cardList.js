@@ -7,7 +7,7 @@ class CardList extends HTMLElement {
     <link rel="stylesheet" href="/components/cardList/cardList.css">    
     <div class="cardsGrid">
         <div class="imageContainer">
-            <a href="/pages/login/login.html">
+            <a href="#">
                 <img src="/assets/img/TT.png" width="auto" height="auto">
                 <t class="textCard">Audi TT</t>   
             </a>
