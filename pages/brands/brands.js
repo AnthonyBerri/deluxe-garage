@@ -1,7 +1,7 @@
 const params = new URLSearchParams(window.location.search);
-const brandName = params.get('name');
+const brandId = params.get('id');
 
-if (!brandName) {
+if (!brandId) {
     const div = document.getElementById('info');
     if (div) {
         div.innerHTML = "<p>Marca não especificada na URL.</p>";
@@ -10,7 +10,7 @@ if (!brandName) {
     fetch('/pages/brands/brand.json') 
         .then(response => response.json())
         .then(brands => {
-            const brand = brands.find(m => m.name.toLowerCase() === brandName.toLowerCase());
+            const brand = brands.find(m => m.id.toLowerCase() === brandId.toLowerCase());
 
             const main = document.getElementById('info');
 

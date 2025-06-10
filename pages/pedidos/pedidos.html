@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deluxe Garage</title>
+    <link rel="stylesheet" href="../../components/header/header.css">
+    <link rel="stylesheet" href="../../components/footer/footer.css">
+    <script src="/components/header/header.js"></script>
+    <script src="/components/footer/footer.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="/styles/main.css">
     <script src="/components/header/header.js"></script>
+    <script src="./script.js"></script>
 </head>
 <body>
 
@@ -25,6 +30,17 @@
         </div>
     </div>
 
+    <header-component></header-component>
+    <main class="main-content">
+        <h2 class="page-title">SEUS PEDIDOS</h2>
+        <button class="add-btn">Adicionar Novo Pedido</button>
+        
+        <div class="requests-container" id="requests-container">
+        
+        </div>
+    </main>
+    
+    <footer-component></footer-component>
     <script src="script.js"></script>
 </body>
 </html>
