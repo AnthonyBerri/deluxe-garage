@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../reserva/reserva.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="/components/header/header.js"></script>
+    <script src="/components/footer/footer.js"></script>
+    <script src="/components/header.js" defer></script>
+    <script src="../../styles/main.css" defer></script>
+
+</head>
+
+<body>
+    
+    <header-component></header-component>
+
+    <main>
+        
+        <div class="container">
+            <form id="reserva-form">
+                <h2 class="title">Reservas</h2>
+                <div class="form-group">
+                    <label for="nome">Local</label>
+                    <input type="text" id="iLocal" name="nome" placeholder="Digite o local" required>
+                
+                    <label for="data">Data:</label>
+                    <input type="date" id="iData" name="data" required>
+                
+                    <label for="hora">Hora:</label>
+                    <input type="time" id="iHora" name="hora" required>
+                </div>
+                <div class="form-img" id="iImg">
+                    <img src="/assets/img/porsche.png" alt="porsche"> 
+                </div>
+                <div class="form-colors">
+                    <button type="button">Branco</button>
+                    <button type="submit">Preto</button>
+                    <button type="button">Vermelho</button>
+                </div>
+                <div class="form-reserve">
+                    <div class="form-radio">
+                        <label>
+                            <input type="radio" name="plano" value="Plano Vip" required>
+                            Plano Vip
+                        </label>
+                        <label>
+                            <input type="radio" name="plano" value="Plano Enterprise">
+                            Plano Enterprise
+                        </label>
+                        <label>
+                            <input type="radio" name="plano" value="Plano Deluxe">
+                            Plano Deluxe
+                        </label>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit">Voltar</button>
+                    <button type="submit">Reservar</button>
+                    
+                </div>
+
+    </main>
+
+
+</body>
+</html>
