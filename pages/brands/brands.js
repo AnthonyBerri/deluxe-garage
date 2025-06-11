@@ -10,7 +10,7 @@ if (!brandId) {
     fetch('/pages/brands/brand.json') 
         .then(response => response.json())
         .then(brands => {
-            const brand = brands.find(m => m.id.toLowerCase() === brandId.toLowerCase());
+            const brand = brands.find(m => m.id === brandId);
 
             const main = document.getElementById('info');
 
@@ -20,7 +20,7 @@ if (!brandId) {
                         <div class="card">
                             <img src="${brand.logo}" alt="${brand.name}" class="brand-logo">
                             <carrossel-component></carrossel-component>
-                            <cards-container></cards-container>
+                            <cards-brands data-cars='${JSON.stringify(brand.cars || [])}'   ></cards-brands>
                         </div>
                     `;
                 } else {
