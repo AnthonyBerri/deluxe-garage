@@ -10,23 +10,23 @@
     {
         "id": "3",
         "name": "BMW",
-        "image1": "",
-        "image2": "",
-        "image3": ""
+        "image1": "../../assets/img/reservaImg/bmwBranca.png",
+        "image2": "../../assets/img/reservaImg/bmwPreta.png",
+        "image3": "../../assets/img/reservaImg/bmwAzul.png"
     },
     {
         "id": "4",
         "name": "Porsche",
         "image1": "../../assets/img/porsche.png",
-        "image2": "../../assets/img/Series3.png",
-        "image3": "../../assets/img/RS6Avant.png"
+        "image2": "../../assets/img/reservaImg/porschePreta.png",
+        "image3": "../../assets/img/reservaImg/porscheVermelha.png"
     },
     {
         "id": "5",
         "name": "Lamborghini",
-        "image1": "",
-        "image2": "",
-        "image3": ""
+        "image1": "../../assets/img/reservaImg/lamboBranca.png",
+        "image2": "../../assets/img/reservaImg/lamboPreta.png",
+        "image3": "../../assets/img/reservaImg/lamboLaranja.png"
     },
     {
         "id": "6",
