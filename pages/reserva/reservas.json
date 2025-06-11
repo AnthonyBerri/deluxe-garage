@@ -1,0 +1,35 @@
+[
+    {
+        "id": "1",
+        "name": "Ferrari"
+    },
+    {
+        "id": "2",
+        "name": "Mercedes"
+    },
+    {
+        "id": "3",
+        "name": "BMW",
+        "image1": "",
+        "image2": "",
+        "image3": ""
+    },
+    {
+        "id": "4",
+        "name": "Porsche",
+        "image1": "../../assets/img/porsche.png",
+        "image2": "../../assets/img/Series3.png",
+        "image3": "../../assets/img/RS6Avant.png"
+    },
+    {
+        "id": "5",
+        "name": "Lamborghini",
+        "image1": "",
+        "image2": "",
+        "image3": ""
+    },
+    {
+        "id": "6",
+        "name": "Audi"
+    }
+]
