@@ -9,9 +9,10 @@ function getAllRequests() {
     const garageRequests = garageData.map((car, index) => ({
         id: `garage_${index}`,
         image: car.image,
-        location: car.local,
-        date: car.data,
-        time: car.hora,
+        local: car.local,
+        data: car.data,
+        nome: car.nome,
+        hora: car.hora,
         plano: car.plan
     }));
     
@@ -24,10 +25,15 @@ function renderCards() {
     
     container.innerHTML = '';
 
-    // if (allRequests.length === 0) {
-    //     showEmptyGarage();
-    //     return;
-    // }
+    if (allRequests.length === 0) {
+        const container = document.getElementById('requests-container');
+        container.innerHTML = `
+        <div class="empty-garage">
+            <h3 class="empty-title">Nenhum pedido encontrado</h3>
+        </div>
+        `;
+        return;
+    }
 
     // updateGarageStats(allRequests);
 
@@ -45,6 +51,7 @@ function renderCards() {
             </div>
             <div class="card-content">
                 <div class="request-info">
+                    <h3>${request.nome} REQUEST</h3>
                     <p>${request.local}</p>
                     ${request.plano ? `<div class="plan-badge">titulo - 1999</div>` : ''}
                 </div>
@@ -66,6 +73,7 @@ function renderCards() {
         
         container.appendChild(card);
     });
+
 }
 
 renderCards();

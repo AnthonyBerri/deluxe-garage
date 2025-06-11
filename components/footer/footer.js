@@ -4,7 +4,8 @@ class FooterComponent extends HTMLElement {
         super();
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.innerHTML = `
-            <footer style="background-color: #333; color: white; padding: 20px; text-align: center;">
+            <link rel="stylesheet" href="../../components/footer/footer.css">
+            <footer>
                 <div>
                     <p>&copy; 2025 Deluxe Garage. Todos os direitos reservados.</p>
                     <p>

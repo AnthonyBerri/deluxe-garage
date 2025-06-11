@@ -12,7 +12,6 @@
   padding: 12px;
 }
 
-/* ===== ESTILOS ORIGINAIS MANTIDOS ===== */
 .car-img {
   width: 160px;
   height: 100px;
@@ -613,13 +612,15 @@ body {
     box-shadow: 0 2px 8px rgba(232, 1, 1, 0.3);
 }
 
-/* Garagem Vazia */
 .empty-garage {
+    display: flex;
     text-align: center;
+    align-items: center;
+    justify-content: center;
     padding: 60px 20px;
-    background: white;
+    background-color: D7D7D7;
     border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    height: 60dvh;
 }
 
 .empty-icon {
@@ -629,7 +630,7 @@ body {
 
 .empty-title {
     font-size: 24px;
-    color: #666;
+    color: black;
     margin-bottom: 15px;
 }
 

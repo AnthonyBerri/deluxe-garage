@@ -1,6 +1,7 @@
 const params = new URLSearchParams(window.location.search);
 const carId = params.get('id');
 let colorId = 1;
+let selectedCar = null;
 
 
 
@@ -15,9 +16,10 @@ if (!carId) {
             .then(response => response.json())
             .then(cars => {
                 const car = cars.find(m => m.id == carId);
+                selectedCar = car; // Save the car object globally
 
                 const main = document.getElementById('iImg');
-
+                
                 if (main) {
                     if (car) {
                         switch (colorId) {
@@ -68,26 +70,29 @@ document.getElementById('3').addEventListener('click', () => {
 
 buttonClick();
 
-document.getElementById('reservar').addEventListener('click', () => {
+document.getElementById('reserva-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
     const selectedPlan = document.querySelector('input[name="plano"]:checked');
     const planValue = selectedPlan ? selectedPlan.value : null;
+    const local = document.getElementById('iLocal').value;
+    const data = document.getElementById('iData').value;
+    const hora = document.getElementById('iHora').value;
+
     const reservationData = {
         carId: carId,
         colorId: colorId,
-        local: document.getElementById('iLocal').value,
-        data: document.getElementById('iData').value,
-        hora: document.getElementById('iHora').value,
+        local: local,
+        data: data,
+        hora: hora,
+        nome: selectedCar ? selectedCar.name : '', // Pega o nome do objeto selecionado
         plano: planValue,
         image: document.getElementById('iImg').querySelector('img').src
     };
-    console.log('Carro reservado com sucesso!', reservationData);
 
-    document.getElementById('reserva-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    window.location.href = '../home/index.html';
     let garage = JSON.parse(localStorage.getItem('deluxeGarage')) || [];
     garage.push(reservationData);
     localStorage.setItem('deluxeGarage', JSON.stringify(garage));
-    });
- 
+
+    window.location.href = '../home/index.html';
 });
