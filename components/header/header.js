@@ -4,7 +4,7 @@ class HeaderComponent extends HTMLElement {
     super();
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML =`
-        <link rel="stylesheet" href="/components/header/header.css">
+        <link rel="stylesheet" href="../../components/header/header.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <header>
@@ -71,17 +71,17 @@ class HeaderComponent extends HTMLElement {
             <div class="sidebar">
                 <ul>               
                     <li><a href="/pages/home/index.html">Home</a></li>
-                    <li><a href="/pages/pedidos/pedidos.html">Pedidos</a></li>
+                    <li><a href="../pedidosSemIA/pedidos.html">Pedidos</a></li>
                     <li><a href="/pages/quemSomos/index.html">Quem Somos?</a></li>
 
                     <h1>Marcas</h1>
 
-                    <li><a href="#">Audi</a></li>
-                    <li><a href="#">BMW</a></li>
-                    <li><a href="#">Ferrari</a></li>
-                    <li><a href="#">Lamborghini</a></li>
-                    <li><a href="#">Mercedes</a></li>
-                     <li><a href="/pages/reservaPORSCHE/porsche.html">Porsche</a></li>
+                    <li><a href="../brands/brand.html?id=6">Audi</a></li>
+                    <li><a href="../brands/brand.html?id=3">BMW</a></li>
+                    <li><a href="../brands/brand.html?id=1">Ferrari</a></li>
+                    <li><a href="../brands/brand.html?id=5">Lamborghini</a></li>
+                    <li><a href="../brands/brand.html?id=2">Mercedes</a></li>
+                    <li><a href="../brands/brand.html?id=4">Porsche</a></li>
                 </ul>
             </div> 
         </header>

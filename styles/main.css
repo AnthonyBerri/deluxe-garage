@@ -6,7 +6,7 @@
     margin: 0;
 }
 
-main {
+.main-content {
     display: flex;
     justify-content: center;
     align-items: center;

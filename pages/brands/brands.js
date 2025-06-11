@@ -7,7 +7,7 @@ if (!brandId) {
         div.innerHTML = "<p>Marca não especificada na URL.</p>";
     }
 } else {
-    fetch('/pages/brands/brand.json') 
+    fetch('../../pages/brands/brand.json') 
         .then(response => response.json())
         .then(brands => {
             const brand = brands.find(m => m.id.toLowerCase() === brandId.toLowerCase());

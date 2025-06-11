@@ -67,3 +67,27 @@ document.getElementById('3').addEventListener('click', () => {
 });
 
 buttonClick();
+
+document.getElementById('reservar').addEventListener('click', () => {
+    const selectedPlan = document.querySelector('input[name="plano"]:checked');
+    const planValue = selectedPlan ? selectedPlan.value : null;
+    const reservationData = {
+        carId: carId,
+        colorId: colorId,
+        local: document.getElementById('iLocal').value,
+        data: document.getElementById('iData').value,
+        hora: document.getElementById('iHora').value,
+        plano: planValue,
+        image: document.getElementById('iImg').querySelector('img').src
+    };
+    console.log('Carro reservado com sucesso!', reservationData);
+
+    document.getElementById('reserva-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    window.location.href = '../home/index.html';
+    let garage = JSON.parse(localStorage.getItem('deluxeGarage')) || [];
+    garage.push(reservationData);
+    localStorage.setItem('deluxeGarage', JSON.stringify(garage));
+    });
+ 
+});
