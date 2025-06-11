@@ -6,16 +6,108 @@
         "cars": [
             {
                 "name": "Purosangue",
-                "img": "/assets/img/ferrariPurosangue.jpg"
+                "img": "/assets/img/Ferrari/ferrariPurosangue.jpg"
+            },
+            {
+                "name": "488 Pista",
+                "img": "/assets/img/Ferrari/ferrari488Pista.jpeg"
+            },
+            {
+                "name": "F40",
+                "img": "/assets/img/Ferrari/ferrariF40.jpeg"
+            },
+            {
+                "name": "LaFerrari",
+                "img": "/assets/img/Ferrari/ferrariLaFerrari.jpeg"
             }
         ] 
     },
     {
         "id": "2",
-        "name": "Mercedes"
+        "name": "Mercedes",
+        "logo": "/assets/img/mercedesLogo.png",
+        "cars": [
+            {
+                "name": "190E",
+                "img": "/assets/img/Mercedes/mercedes190E.jpg"
+            },
+            {
+                "name": "300 SL",
+                "img": "/assets/img/Mercedes/mercedes300SL.jpeg"
+            },
+            {
+                "name": "AMG G63",
+                "img": "/assets/img/Mercedes/mercedesAmgG63.jpeg"
+            },
+            {
+                "name": "AMG GT Black Series",    
+                "img": "/assets/img/Mercedes/mercedesAmgGtBlackSeries.jpg"
+            }
+        ] 
     },
     {
         "id": "3",
-        "name": "BMW"
+        "name": "BMW",
+        "logo": "/assets/img/bmwLogo.png",
+        "cars": [
+            {
+                "name": "X1",
+                "img": "/assets/img/BMW/bmwX1.jpeg"
+            },
+            {
+                "name": "E36",
+                "img": "/assets/img/BMW/bmwE36.jpeg"
+            },
+            {
+                "name": "M3 GTR",    
+                "img": "/assets/img/BMW/bmwM3Gtr.jpeg"
+            }
+        ] 
+    },
+    {
+        "id": "4",
+        "name": "Audi",
+        "logo": "/assets/img/audiLogo.png",
+        "cars": [
+            {
+                "name": "R8",
+                "img": "/assets/img/Audi/audiR8.jpeg"
+            },
+            {
+                "name": "R6 Avant Performance",
+                "img": "/assets/img/Audi/audiRs6AvantPerformance.jpeg"
+            },
+            {
+                "name": "Sport Quattro S1",
+                "img": "/assets/img/Audi/audiSportQuattroS1.jpeg"
+            },
+            {
+                "name": "TT RS",    
+                "img": "/assets/img/Audi/audiTtRs.jpeg"
+            }
+        ] 
+    },
+    {
+        "id": "5",
+        "name": "Porsche",
+        "logo": "/assets/img/porscheLogo.png",
+        "cars": [
+            {
+                "name": "718 Spyder",
+                "img": "/assets/img/Porsche/porsche718Spyder.jpg"
+            },
+            {
+                "name": "911 GT3 RS",
+                "img": "/assets/img/Porsche/porsche911Gt3Rs.jpeg"
+            },
+            {
+                "name": "911 Turbo",
+                "img": "/assets/img/Porsche/porsche911Turbo.jpeg"
+            },
+            {
+                "name": "Carrera GT",    
+                "img": "/assets/img/Porsche/porscheCarreraGt.jpeg"
+            }
+        ] 
     }
 ]
