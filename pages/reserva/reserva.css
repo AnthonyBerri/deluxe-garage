@@ -21,7 +21,6 @@ form {
     align-items: center;
     gap: 15px;
     width: 80%;
-  
     align-items: center;
     padding: 40px;
     border: 1px solid #ccc;
@@ -39,12 +38,14 @@ form {
     max-width: 600px;
     
 }
-.form-color {
+.form-colors {
     display: flex;
-    flex-direction: space-between;
-    width: 100%;
-    
+    flex-direction: row;
+    justify-content: space-between;
+    width: 55%;
+    gap : 10px;
 }
+
 /* Precisa colocar o \3 para que o navegador entenda que é o id 1 ,2 e 3 */
 #\31 {
     background-color: aliceblue;
@@ -91,10 +92,23 @@ form {
     gap: 10px; 
 
 }
-.form-radio #r1,
-.form-radio #r2,
-.form-radio #r3{
-    border: #0a0a0a 1.5px solid;
+.form-radio label {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    border: 1.5px solid #bbb;
+    border-radius: 6px;
+    padding: 8px 128px;
+    margin: 1px 0;
+    background: #fafafa;
+    transition: border 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    gap: 4px;
+}
+.form-radio label:hover,
+.form-radio input[type="radio"]:focus + label {
+    border-color: #1a1b1b;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.08);
 }
 .form-actions{
     display: flex;
