@@ -2,21 +2,7 @@ const params = new URLSearchParams(window.location.search);
 const carId = params.get('id');
 let colorId = 1;
 
-document.getElementById('1').addEventListener('click', () => {
-    colorId = 1;
-    //console.log('Cor selecionada: 1', colorId);
-    buttonClick();
-});
-document.getElementById('2').addEventListener('click', () => {
-    colorId = 2;
-    //console.log('Cor selecionada: 2', colorId);
-    buttonClick();
-});
-document.getElementById('3').addEventListener('click', () => {
-    colorId = 3;
-    //console.log('Cor selecionada: ', colorId);
-    buttonClick();
-});
+
 
 if (!carId) {
     const div = document.getElementById('iImg');
@@ -64,5 +50,20 @@ if (!carId) {
             });
     }
 }
+document.getElementById('1').addEventListener('click', () => {
+    colorId = 1;
+    //console.log('Cor selecionada: 1', colorId);
+    buttonClick();
+});
+document.getElementById('2').addEventListener('click', () => {
+    colorId = 2;
+    //console.log('Cor selecionada: 2', colorId);
+    buttonClick();
+});
+document.getElementById('3').addEventListener('click', () => {
+    colorId = 3;
+    //console.log('Cor selecionada: ', colorId);
+    buttonClick();
+});
 
 buttonClick();
