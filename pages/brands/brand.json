@@ -109,5 +109,32 @@
                 "img": "/assets/img/Porsche/porscheCarreraGt.jpeg"
             }
         ] 
+    },
+    {
+        "id": "6",
+        "name": "Lamborghini",
+        "logo": "/assets/img/LamborghiniLogo.png",
+        "cars": [
+            {
+                "name": "Aventador SVJ",
+                "img": "/assets/img/Lamborghini/lamborghiniAventadorSvj.jpeg"
+            },
+            {
+                "name": "Huracán STO",
+                "img": "/assets/img/Lamborghini/lamborghiniHuracanSto.jpeg"
+            },
+            {
+                "name": "Sesto Elemento",
+                "img": "/assets/img/Lamborghini/lamborghiniSestoElemento.jpeg"
+            },
+            {
+                "name": "Urus",    
+                "img": "/assets/img/Lamborghini/lamborghiniUrus.jpeg"
+            },
+            {
+                "name": "Veneno",    
+                "img": "/assets/img/Lamborghini/lamborghiniVeneno.jpeg"
+            }
+        ] 
     }
 ]
