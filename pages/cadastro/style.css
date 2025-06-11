@@ -4,7 +4,7 @@
     box-sizing: border-box;
     list-style: none;
 }
-
+/* Remove a barra de rolagem */
 body {
     overflow: hidden;
 }
@@ -27,8 +27,8 @@ main{
     width: 100vw;
     height: 100vh;
     background-image: url('../../assets/img/backgorund.png');
-    background-size: cover; 
-    background-position: center; 
+    background-size: cover; /* Crops and fills the screen */
+    background-position: center; /* Centers the crop */
     z-index: -1;
     position: absolute;
     right: 430px;
@@ -90,7 +90,7 @@ main{
             width: 100%;
           }
           
-          
+          /* Estilo do campo de entrada */
        & .form__group {
             position: relative;
             padding: 15px 0 0;

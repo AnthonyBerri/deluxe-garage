@@ -4,7 +4,7 @@ main {
     align-items: center;
     width: 100%;
     height: auto;
-    padding-top: 100px;
+    padding: 100px 0px 26px 0px;
     overflow-X: hidden;
 }
 

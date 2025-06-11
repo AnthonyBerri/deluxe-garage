@@ -45,7 +45,7 @@ class HeaderComponent extends HTMLElement {
                         </button>
                     </div>
                     <p class="forgot-password"><a href="#">Esqueci minha senha</a></p>
-                    <p>Não tem uma conta? <a href="/pages/cadastro/cadastro.html">Cadastre-se</a></p>
+                    <p>Não tem uma conta? <a href="../cadastro/cadastro.html">Cadastre-se</a></p>
                 </div>
             </div>
 
@@ -70,18 +70,18 @@ class HeaderComponent extends HTMLElement {
             <!-- Sidebar -->
             <div class="sidebar">
                 <ul>               
-                    <li><a href="/pages/home/index.html">Home</a></li>
-                    <li><a href="../pedidosSemIA/pedidos.html">Pedidos</a></li>
-                    <li><a href="/pages/quemSomos/index.html">Quem Somos?</a></li>
+                    <li><a href="../home/index.html">Home</a></li>
+                    <li><a href="../pedidos/pedidos.html">Pedidos</a></li>
+                    <li><a href="../quemSomos/index.html">Quem Somos?</a></li>
 
                     <h1>Marcas</h1>
 
                     <li><a href="../brands/brand.html?id=6">Audi</a></li>
                     <li><a href="../brands/brand.html?id=3">BMW</a></li>
                     <li><a href="../brands/brand.html?id=1">Ferrari</a></li>
-                    <li><a href="../brands/brand.html?id=5">Lamborghini</a></li>
+                    <li><a href="../brands/brand.html?id=4">Lamborghini</a></li>
                     <li><a href="../brands/brand.html?id=2">Mercedes</a></li>
-                    <li><a href="../brands/brand.html?id=4">Porsche</a></li>
+                    <li><a href="../brands/brand.html?id=5">Porsche</a></li>
                 </ul>
             </div> 
         </header>

@@ -4,7 +4,7 @@
     align-items: center;
     width: 100%;
     height: auto;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);          
     gap: 25px;
 }
 
@@ -34,7 +34,6 @@
     transition: transform 0.1s ease-in-out;
     filter: brightness(1.75);
     display: flex;
-    
 }
 
 .textCard {
