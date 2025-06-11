@@ -46,7 +46,7 @@ class CardBrands extends HTMLElement {
             <div class="cardsGrid">
                 ${cars.map(car => `
                     <div class="imageContainer">
-                        <img src="${car.img}" width="600px" height="280px">
+                        <a href="../reserva/reserva.html?id=1"><img src="${car.img}" width="600px" height="280px"></a>
                     </div>
                 `).join('')}
             </div>
