@@ -50,3 +50,67 @@
 div .imageContainer:hover .textCard {
     color: rgba(255, 255, 255, 1.0);
 }
+
+/* Responsividade para telas médias */
+@media (max-width: 900px) {
+    .cardsGrid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        padding: 8px;
+    }
+    .imageContainer {
+        font-size: 22px;
+        margin-left: 8px;
+        margin-right: 8px;
+        margin-bottom: 10px;
+        max-width: 90vw;
+    }
+    .imageContainer img {
+        border-radius: 8px;
+    }
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+    .cardsGrid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 6px;
+    }
+    .imageContainer {
+        font-size: 16px;
+        margin-left: 4vw;
+        margin-right: 4vw;
+        margin-bottom: 8px;
+        max-width: 96vw;
+    }
+    .imageContainer img {
+        border-radius: 6px;
+        max-height: 160px;
+    }
+    .textCard {
+        font-size: clamp(0.9rem, 4vw, 1.2rem);
+    }
+}
+
+/* Responsividade para telas muito pequenas */
+@media (max-width: 480px) {
+    .cardsGrid {
+        gap: 6px;
+        padding: 2px;
+    }
+    .imageContainer {
+        font-size: 12px;
+        margin-left: 1vw;
+        margin-right: 1vw;
+        margin-bottom: 4px;
+        max-width: 98vw;
+    }
+    .imageContainer img {
+        border-radius: 4px;
+        max-height: 110px;
+    }
+    .textCard {
+        font-size: clamp(0.8rem, 5vw, 1rem);
+    }
+}
