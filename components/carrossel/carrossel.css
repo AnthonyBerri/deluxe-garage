@@ -3,12 +3,14 @@
     width: 800px;
     height: 400px;
     overflow: hidden;
+    border-radius: 10px;
 }
 
 .slides{
     width: 400%;
     height: 400px;
     display: flex;
+    
 
 }
 
@@ -23,7 +25,6 @@
 
 .slide img{
     width: 800px;
-    filter: brightness(3.00);
 }
 
 .manual-navigation{

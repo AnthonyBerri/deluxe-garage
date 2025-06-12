@@ -76,10 +76,10 @@ class HeaderComponent extends HTMLElement {
 
                     <h1>Marcas</h1>
 
-                    <li><a href="../brands/brand.html?id=6">Audi</a></li>
+                    <li><a href="../brands/brand.html?id=4">Audi</a></li>
                     <li><a href="../brands/brand.html?id=3">BMW</a></li>
                     <li><a href="../brands/brand.html?id=1">Ferrari</a></li>
-                    <li><a href="../brands/brand.html?id=4">Lamborghini</a></li>
+                    <li><a href="../brands/brand.html?id=6">Lamborghini</a></li>
                     <li><a href="../brands/brand.html?id=2">Mercedes</a></li>
                     <li><a href="../brands/brand.html?id=5">Porsche</a></li>
                 </ul>

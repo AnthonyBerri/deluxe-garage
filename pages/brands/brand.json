@@ -2,7 +2,7 @@
     {
         "id": "1",
         "name": "Ferrari",
-        "logo": "../../assets/img/ferrariLogo.png",
+        "logo": "../../assets/img/Ferrari/ferrariLogo.png",
         "cars": [
             {
                 "name": "Purosangue",
@@ -25,7 +25,7 @@
     {
         "id": "2",
         "name": "Mercedes",
-        "logo": "../../assets/img/mercedesLogo.png",
+        "logo": "../../assets/img/Mercedes/mercedesLogo.png",
         "cars": [
             {
                 "name": "190E",
@@ -48,7 +48,7 @@
     {
         "id": "3",
         "name": "BMW",
-        "logo": "../../assets/img/bmwLogo.png",
+        "logo": "../../assets/img/BMW/bmwLogo.png",
         "cars": [
             {
                 "name": "X1",
@@ -60,14 +60,18 @@
             },
             {
                 "name": "M3 GTR",
-                "img": "../../../assets/img/BMW/bmwM3Gtr.jpeg"
+                "img": "../../assets/img/BMW/bmwM3Gtr.jpeg"
+            },
+            {
+                "name": "M4 G82",
+                "img": "../../assets/img/BMW/bmwM4.png"
             }
         ] 
     },
     {
         "id": "4",
         "name": "Audi",
-        "logo": "../../assets/img/audiLogo.png",
+        "logo": "../../assets/img/Audi/audiLogo.png",
         "cars": [
             {
                 "name": "R8",
@@ -90,7 +94,7 @@
     {
         "id": "5",
         "name": "Porsche",
-        "logo": "../../assets/img/porscheLogo.png",
+        "logo": "../../assets/img/Porsche/porscheLogo.png",
         "cars": [
             {
                 "name": "718 Spyder",
@@ -113,7 +117,7 @@
     {
         "id": "6",
         "name": "Lamborghini",
-        "logo": "../../assets/img/LamborghiniLogo.png",
+        "logo": "../../assets/img/Lamborghini/lamborghiniLogo.png",
         "cars": [
             {
                 "name": "Aventador SVJ",
@@ -133,7 +137,7 @@
             },
             {
                 "name": "Veneno",
-                "img": "../../../assets/img/Lamborghini/lamborghiniVeneno.jpeg"
+                "img": "../../assets/img/Lamborghini/lamborghiniVeneno.jpeg"
             }
         ] 
     }

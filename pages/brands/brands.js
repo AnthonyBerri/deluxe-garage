@@ -19,7 +19,7 @@ if (!brandId) {
                     main.innerHTML = `
                         <div class="card">
                             <img src="${brand.logo}" alt="${brand.name}" class="brand-logo">
-                            <carrossel-component></carrossel-component>
+                            <carrossel-component data-cars='${JSON.stringify(brand.cars || [])}'></carrossel-component>
                             <cards-brands data-cars='${JSON.stringify(brand.cars || [])}'   ></cards-brands>
                         </div>
                     `;

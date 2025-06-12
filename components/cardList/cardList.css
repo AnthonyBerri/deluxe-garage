@@ -6,6 +6,7 @@
     height: auto;
     grid-template-columns: repeat(2, 1fr);          
     gap: 25px;
+    padding-top: 25px;
 }
 
 .imageContainer {
@@ -20,11 +21,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
 }
 
 .imageContainer img {
-    width: 100%;
-    height: auto;
+    width: 600px;
+    height: 280px;
     border-radius: 10px;
     object-fit: cover;
 }
