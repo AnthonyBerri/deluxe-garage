@@ -1,0 +1,224 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: 100%;
+    height: 100vh; 
+    padding-top: 60px; 
+    overflow-x: hidden;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 80%;
+    align-items: center;
+    padding: 40px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 600px;
+    
+}
+.form-colors {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 55%;
+    gap : 10px;
+}
+
+/* Precisa colocar o \3 para que o navegador entenda que é o id 1 ,2 e 3 */
+#\31 {
+    background-color: aliceblue;
+    width: 200px;
+    height: 30px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+    cursor: pointer;
+}
+#\31:hover {
+    transform: scale(1.05);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+#\32 {
+    background-color: #222;
+    width: 200px;
+    height: 30px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+    cursor: pointer;
+}
+#\32:hover {
+    transform: scale(1.05);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+#\33 {
+    background-color: rgb(241, 5, 5);
+    width: 200px;
+    height: 30px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+    cursor: pointer;
+}
+#\33:hover {
+    transform: scale(1.05);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.form-radio {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+
+}
+.form-radio label {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    border: 1.5px solid #bbb;
+    border-radius: 6px;
+    padding: 8px 128px;
+    margin: 1px 0;
+    background: #fafafa;
+    transition: border 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    gap: 4px;
+}
+.form-radio label:hover,
+.form-radio input[type="radio"]:focus + label {
+    border-color: #1a1b1b;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.08);
+}
+.form-actions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    
+ 
+} 
+.form-actions #voltar {
+    background-color: rgb(247, 244, 244);
+    color: rgb(10, 10, 10);
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.form-actions #voltar:hover {
+    background-color: rgb(235, 13, 13);
+    transform: scale(1.05);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+.form-actions #reservar {
+    background-color: rgb(1, 12, 1);
+    border-radius: 8px;
+    padding: 15px 20px;
+    color: white;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.form-actions #reservar:hover {
+    background-color: rgb(0, 100, 0);
+    transform: scale(1.05);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+img {
+    width: 100%;
+    height: auto;
+    width: 300px;
+    max-width: 400px;
+    min-width: none;
+    border-radius: 8px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"] {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px 15px;
+    border: 1.5px solid #bbb;
+    border-radius: 6px;
+    background: #f7f7f7;
+    font-size: 1rem;
+    color: #222;
+    transition: border 0.2s, box-shadow 0.2s;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    outline: none;
+    margin-bottom: 5px;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus {
+    border: 1.5px solid #0a0a0a;
+    box-shadow: 0 2px 8px rgba(15, 15, 15, 0.1);
+    background: #fff;
+}
+
+label {
+    font-weight: 500;
+    color: #222;
+    margin-bottom: 3px;
+    font-size: 1rem;
+}
+
+/*Responsividade*/
+@media (max-width: 700px) {
+    .container {
+        padding: 10px;
+        height: auto;
+        min-height: 100vh;
+    }
+    form {
+        padding: 20px;
+        width: 100%;
+        min-width: unset;
+        box-sizing: border-box;
+    }
+    .form-group,
+    .form-action {
+        flex-direction: column;
+        max-width: 100%;
+        width: 100%;
+        gap: 10px;
+    }
+    .form-color{
+        flex-direction: column;
+        justify-content: space-between;
+        
+        width: 33%;
+    }
+    img {
+        width: 100%;
+        max-width: 100%;
+        min-width: unset;
+    }
+}
+

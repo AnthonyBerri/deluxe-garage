@@ -3,6 +3,10 @@ class CardBrands extends HTMLElement {
     constructor() {
         super();
         const shadow = this.attachShadow({ mode: 'open' });
+        shadow.innerHTML =`
+        <link rel="stylesheet" href="../../components/cardList/cardList.css">    
+        <div class="cardsGrid"></div>
+    `;
     }
 
     static get observedAttributes() {
@@ -37,7 +41,7 @@ class CardBrands extends HTMLElement {
 
     render(cars) {
         this.shadowRoot.innerHTML = `
-            <link rel="stylesheet" href="/components/cardList/cardList.css">    
+            <link rel="stylesheet" href="../../components/cardList/cardList.css">    
             <div class="cardsGrid">
                 ${cars.map(car => `
                     <div class="imageContainer">

@@ -1,11 +1,12 @@
-footer{
-    width: 99%;
-    height: 57px;
+footer {
     display: flex;
+    width: 100%;
+    min-height: 57px;
     align-items: center;
-    justify-content: space-between;
-    padding: 11px 15px;
+    justify-content: center;
     background-color: #2a2a2a;
-    z-index: auto;
-    position: fixed;
+    color: white;
+    left: 0;
+    text-align: center;
+    margin-top: auto;
 }
