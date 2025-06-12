@@ -1,3 +1,7 @@
+function clearGarageData() {
+    localStorage.removeItem('deluxeGarage');
+}
+
 function loadGarageData() {
     const garage = JSON.parse(localStorage.getItem('deluxeGarage')) || [];
     return garage;
