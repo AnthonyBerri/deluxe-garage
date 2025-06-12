@@ -18,49 +18,53 @@
     <header-component></header-component>
 
     <main>
-        
         <div class="container">
-            <form id="reserva-form">
-                <h2 class="title">Reservas</h2>
-                <div class="form-group">
-                    <label for="nome">Local</label>
-                    <input type="text" id="iLocal" name="local" placeholder="Digite o local" required>
-                
-                    <label for="data">Data:</label>
-                    <input type="date" id="iData" name="data" required>
-                
-                    <label for="hora">Hora:</label>
-                    <input type="time" id="iHora" name="hora" required>
-                </div>
-                <div class="form-img" id="iImg">
-                    <img src="" alt="template"> 
-                </div>
-                <div class="form-colors">
-                    <button  type="button" id="1" ></button>
-                    <button  type="button" id="2" ></button>
-                    <button  type="button" id="3" ></button>
-                </div>
-                <div class="form-reserve">
-                    <div class="form-radio">
-                        <label>
-                            <input type="radio" id="r1" name="plano" value="Plano Vip" required>
-                            Plano Vip
-                        </label>
-                        <label>
-                            <input type="radio" id="r2" name="plano" value="Plano Enterprise" required>
-                            Plano Enterprise
-                        </label>
-                        <label>
-                            <input type="radio" id="r3" name="plano" value="Plano Deluxe" required>
-                            Plano Deluxe
-                        </label>
+            <form id="reserva-form" class="form-grid">
+                <div class="car-area">
+                    <div class="form-img" id="iImg">
+                        <img src="" alt="template"> 
                     </div>
                 </div>
-                <div class="form-actions">
-                    <button type="submit" id="voltar">Voltar</button>
-                    <button type="submit" id="reservar">Reservar</button>
+                <div class="info-area">
+                    <div class="form-group">
+                        <label for="nome">Local:</label>
+                        <input type="text" id="iLocal" name="local" placeholder="Digite o local" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hora">Hora:</label>
+                        <input type="time" id="iHora" name="hora" required>
+                    </div>
+                    <div class="form-group">      
+                        <label for="data">Data:</label>
+                        <input type="date" id="iData" name="data" required>
+                    </div>        
+                    <div class="form-colors">
+                        <button type="button" id="1"></button>
+                        <button type="button" id="2"></button>
+                        <button type="button" id="3"></button>
+                    </div>
+                    <div class="form-reserve">
+                        <div class="form-radio">
+                            <label>
+                                <input type="radio" id="r1" name="plano" value="Plano Vip" required>
+                                Plano Vip
+                            </label>
+                            <label>
+                                <input type="radio" id="r2" name="plano" value="Plano Enterprise" required>
+                                Plano Enterprise
+                            </label>
+                            <label>
+                                <input type="radio" id="r3" name="plano" value="Plano Deluxe" required>
+                                Plano Deluxe
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" id="voltar">Voltar</button>
+                        <button type="submit" id="reservar">Reservar</button>
+                    </div>
                 </div>
-             </form>
+            </form>
         </div>
     </main>
 
