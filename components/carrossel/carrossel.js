@@ -71,7 +71,7 @@ class CarrosselComponent extends HTMLElement {
                     
                     ${[0,1,2,3].map(idx => `
                     <div class="slide${idx === 0 ? ' first' : ''}">
-                        <a src=""><img src="${cars[idx] ? cars[idx].img : ''}" alt="Imagem ${idx + 1}"></a>
+                        <a href="${cars[idx] ? cars[idx].link : ''}"><img src="${cars[idx] ? cars[idx].img : ''}" alt="Imagem ${idx + 1}"></a>
                     </div>
                     `).join('')}
 
