@@ -7,22 +7,28 @@ class CardList extends HTMLElement {
     <link rel="stylesheet" href="../../components/cardList/cardList.css">    
     <div class="cardsGrid">
         <div class="imageContainer">
-            <a href="#">
+            <a href="../reserva/reserva.html?id=4">
                 <img src="../../assets/img/Audi/TT.png" width="auto" height="auto">
                 <t class="textCard">Audi TT</t>   
             </a>
         </div>
         <div class="imageContainer">
-            <img src="../../assets/img/Audi/RS6Avant.png" width="600px" height="280px">
-            <t class="textCard">Audi RS6Avant</t> 
+            <a href="../reserva/reserva.html?id=6">
+                <img src="../../assets/img/Lamborghini/lamborghiniSestoElemento.jpeg" width="600px" height="280px">
+                <t class="textCard">Lamborghini Sesto Elemento</t> 
+            </a>
         </div>
         <div class="imageContainer">
-            <img src="../../assets/img/Audi/RS6Avant.png" width="600px" height="280px">
-            <t class="textCard">Audi RS6Avant</t> 
+            <a href="../reserva/reserva.html?id=3">
+                <img src="../../assets/img/BMW/bmwE36.jpeg" width="600px" height="280px">
+                <t class="textCard">BMW E36</t> 
+            </a>
         </div>
         <div class="imageContainer">
-            <img src="../../assets/img/Audi/TT.png" width="600px" height="280px">
-            <t class="textCard">Audi TT</t> 
+            <a href="../reserva/reserva.html?id=2">
+                <img src="../../assets/img/Mercedes/mercedes190E.jpg" width="600px" height="280px">
+                <t class="textCard">Mercedes 190E</t> 
+            </a>
         </div>
     </div> 
     `;
