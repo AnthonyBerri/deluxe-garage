@@ -425,7 +425,7 @@ header{
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 11px 10px;
+        padding: 11px 50px 10px 0px;
         z-index: 10;
         position: fixed;
         top: 0;
@@ -487,7 +487,7 @@ header{
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 9px 6px;
+        padding: 9px 40px 6px 0px;
         z-index: 10;
         position: fixed;
         top: 0;

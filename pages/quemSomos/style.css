@@ -46,8 +46,8 @@ body {
 
 .main-container {
   max-width: 1024px;
-  margin: 24px auto;
-  padding: 0 24px;
+  margin: auto;
+  padding: 90px 24px;
 }
 
 .content-wrapper {
@@ -145,7 +145,7 @@ body {
 
 @media (max-width: 768px) {
   .main-container {
-    margin: 16px auto;
+    margin: 90px 24px;
     padding: 0 16px;
   }
 
