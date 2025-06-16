@@ -3,7 +3,8 @@ main {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: auto;
+    min-height: 80vw;
+    max-height: auto;
     padding: 100px 0px 26px 0px;
     overflow-X: hidden;
 }
