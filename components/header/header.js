@@ -8,8 +8,8 @@ class HeaderComponent extends HTMLElement {
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <header>
-            <button class="menu-btn">☰ </button> 
-            <p class="logo">DELUXE GARAGE</p>
+            <button class="menu-btn">☰</button> 
+            <a href="../../pages/home/index.html" class="logo">DELUXE GARAGE</a>
             <div class="login-btn">
                 <a href="#" class="login" id="login-modal-btn">
                     Login
