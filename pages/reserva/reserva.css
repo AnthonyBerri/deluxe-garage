@@ -90,7 +90,6 @@ form {
 
 /* Precisa colocar o \3 para que o navegador entenda que é o id 1 ,2 e 3 */
 #\31 {
-    background-color: aliceblue;
     width: 200px;
     height: 30px;
     border: none;
@@ -103,7 +102,6 @@ form {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 #\32 {
-    background-color: #222;
     width: 200px;
     height: 30px;
     border: none;
@@ -116,7 +114,6 @@ form {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 #\33 {
-    background-color: rgb(241, 5, 5);
     width: 200px;
     height: 30px;
     border: none;

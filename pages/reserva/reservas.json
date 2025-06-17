@@ -4,7 +4,10 @@
         "name": "Ferrari",
         "image1": "../../assets/img/reservaImg/ferrari/Ferrariprata.png",
         "image2": "../../assets/img/reservaImg/ferrari/Ferrariamarela.png",
-        "image3": "../../assets/img/reservaImg/ferrari/Ferrarivermelha.png"
+        "image3": "../../assets/img/reservaImg/ferrari/Ferrarivermelha.png",
+        "cor1": "#919191",
+        "cor2": "#ffff00",
+        "cor3": "#ff0000"
 
     },
     {
@@ -12,34 +15,49 @@
         "name": "Mercedes",
         "image1": "../../assets/img/reservaImg/mercedes/Mercedesbranca.png",
         "image2": "../../assets/img/reservaImg/mercedes/Mercedespreta.png",
-        "image3": "../../assets/img/reservaImg/mercedes/Mercedesprata.png"
+        "image3": "../../assets/img/reservaImg/mercedes/Mercedesprata.png",
+        "cor1": "#ffffff",
+        "cor2": "#000000",
+        "cor3": "#919191"
     },
     {
         "id": "3",
         "name": "BMW",
         "image1": "../../assets/img/reservaImg/bmw/bmwBranca.png",
         "image2": "../../assets/img/reservaImg/bmw/bmwPreta.png",
-        "image3": "../../assets/img/reservaImg/bmw/bmwAzul.png"
+        "image3": "../../assets/img/reservaImg/bmw/bmwAzul.png",
+        "cor1": "#ffffff",
+        "cor2": "#000000",
+        "cor3": "#000091"
     },
     {
         "id": "5",
         "name": "Porsche",
         "image1": "../../assets/img/reservaImg/porsche/porscheBranca.png",
         "image2": "../../assets/img/reservaImg/porsche/porschePreta.png",
-        "image3": "../../assets/img/reservaImg/porsche/porscheVermelha.png"
+        "image3": "../../assets/img/reservaImg/porsche/porscheVermelha.png",
+        "cor1": "#ffffff",
+        "cor2": "#000000",
+        "cor3": "#ff0000"
     },
     {
         "id": "6",
         "name": "Lamborghini",
         "image1": "../../assets/img/reservaImg/lamborghini/lamboBranca.png",
         "image2": "../../assets/img/reservaImg/lamborghini/lamboPreta.png",
-        "image3": "../../assets/img/reservaImg/lamborghini/lamboLaranja.png"
+        "image3": "../../assets/img/reservaImg/lamborghini/lamboLaranja.png",
+        "cor1": "#ffffff",
+        "cor2": "#000000",
+        "cor3": "#ff8c00"
     },
     {
         "id": "4",
         "name": "Audi",
         "image1": "../../assets/img/reservaImg/audi/A3branco.png",
         "image2": "../../assets/img/reservaImg/audi/A3preto.png",
-        "image3": "../../assets/img/reservaImg/audi/A3vermelho.png"
+        "image3": "../../assets/img/reservaImg/audi/A3vermelho.png",
+        "cor1": "#ffffff",
+        "cor2": "#000000",
+        "cor3": "#ff0000"
     }
 ]

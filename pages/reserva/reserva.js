@@ -19,14 +19,21 @@ if (!carId) {
                 selectedCar = car; // Save the car object globally
 
                 const main = document.getElementById('iImg');
-                
+                const button1 = document.getElementById(1);
+                const button2 = document.getElementById(2);
+                const button3 = document.getElementById(3);
+
+                button1.style.backgroundColor = car.cor1;
+                button2.style.backgroundColor = car.cor2;
+                button3.style.backgroundColor = car.cor3;
+            
                 if (main) {
-                    if (car) {
+                    if (car) {      
                         switch (colorId) {
                             case 2:
                                 main.innerHTML = `
-                                    <img src="${car.image2}" alt="${car.name}">
-                                `;
+                                    <img src="${car.image2}" alt="${car.name}">  
+                                `;    
                                 break;
                             case 3:
                                 main.innerHTML = `
