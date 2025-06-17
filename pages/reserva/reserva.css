@@ -304,6 +304,10 @@ label {
     }
 }
 @media (max-width: 900px) {
+    .reserva-form{
+        width: 100%;
+        padding-top: 200px;
+    }
     .form-grid {
         display: flex;
         flex-direction: column;
@@ -312,6 +316,7 @@ label {
         width: 100%;
     }
     .car-area {
+        padding-top: 10%;
         min-height: 180px;
         margin-bottom: 16px;
         width: 100%;
@@ -360,8 +365,8 @@ label {
         justify-content: flex-start;
     }
     .form-colors {
-        width: 100%;
-        justify-content: flex-start;
+        width: 90%;
+       
     }
     .form-colors button {
         width: 100%;
