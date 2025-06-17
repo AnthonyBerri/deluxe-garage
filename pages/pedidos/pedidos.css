@@ -84,6 +84,7 @@ body {
     align-items: center;
     padding-top: 25px;
     padding-bottom: 25px;
+    width: 90%;
 }
 
 .request-card {
@@ -94,7 +95,7 @@ body {
     overflow: hidden;
     display: flex;
     height: 192px;
-    width: 90%;
+    width: 100%;
     position: relative;
     transition: transform 0.2s, box-shadow 0.2s;
 }
@@ -487,6 +488,7 @@ body {
     .request-card {
         flex-direction: column;
         height: auto;
+        width: 100%;
     }
 
     .car-image {
