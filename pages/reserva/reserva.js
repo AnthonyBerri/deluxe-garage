@@ -101,5 +101,9 @@ document.getElementById('reserva-form').addEventListener('submit', function(even
     garage.push(reservationData);
     localStorage.setItem('deluxeGarage', JSON.stringify(garage));
 
-    window.location.href = '../home/index.html';
+    window.location.href = '../pedidos/pedidos.html';
+});
+
+document.getElementById('voltar').addEventListener('click', function() {
+    window.location.href = '../home/index.html'; 
 });
