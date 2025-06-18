@@ -8,7 +8,7 @@ class CardList extends HTMLElement {
     <div class="cardsGrid">
         <div class="imageContainer">
             <a href="../reserva/reserva.html?id=4">
-                <img src="../../assets/img/Audi/TT.png" width="auto" height="auto">
+                <img src="../../assets/img/Audi/audiR8.jpeg" width="auto" height="auto">
                 <t class="textCard">Audi TT</t>   
             </a>
         </div>

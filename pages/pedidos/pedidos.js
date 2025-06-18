@@ -70,14 +70,49 @@ function renderCards() {
                     </div>
                 </div>
                 <div class="card-actions">
+                    <button class="cancel-btn" onclick="cancelRequest('${request.id}')">Cancelar Pedido</button>
                     <button class="details-btn" onclick="showDetails('${request.id}')">Ver Detalhes</button>
                 </div>
+                <div id="details-container" class="details-container">
+                </div>
+                
             </div>
         `;
         
         container.appendChild(card);
     });
 
+}
+
+showDetails = (id) => {
+    const garageData = loadGarageData();
+    const request = garageData.find(car => car.id === id);
+    console.log('id', id);
+    if (request) {
+        const detailsContainer = document.getElementById('details-container');
+        detailsContainer.innerHTML = `
+            <h2>Detalhes do Pedido</h2>
+            <img src="${request.image}" alt="${request.nome}">
+            <p><strong>Nome:</strong> ${request.nome}</p>
+            <p><strong>Local:</strong> ${request.local}</p>
+            <p><strong>Data:</strong> ${request.data}</p>
+            <p><strong>Hora:</strong> ${request.hora}</p>
+            <p><strong>Plano:</strong> ${request.plano}</p>
+        `;
+        detailsContainer.style.display = 'block';
+    }
+}
+
+cancelRequest = (id) => {
+    const garageData = loadGarageData();
+    const requestIndex = garageData.findIndex(car => car.id === id);
+    if (requestIndex !== `garage_${id}`) {
+        garageData.splice(requestIndex, 1);
+        localStorage.setItem('deluxeGarage', JSON.stringify(garageData));
+        renderCards();
+    } else {
+        console.error('Pedido não encontrado:', id);
+    }
 }
 
 renderCards();
