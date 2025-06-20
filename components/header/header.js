@@ -34,13 +34,13 @@ class HeaderComponent extends HTMLElement {
                     </form>
                     <p class="or">Ou entre com</p>
                     <div class="social-btn">
-                        <button class="google-btn" title="Entrar com Google">
+                        <button class="google-btn" title="Entrar com Google" onclick="window.location.href='https://accounts.google.com/signin'">
                             <i class="fa-brands fa-google"></i>
                         </button>
-                        <button class="facebook-btn" title="Entrar com Facebook">
+                        <button class="facebook-btn" title="Entrar com Facebook" onclick="window.location.href='https://www.facebook.com/'">
                             <i class="fa-brands fa-facebook-f"></i>                          
                         </button>
-                        <button class="aple-btn" title="Entrar com Aple">
+                        <button class="aple-btn" title="Entrar com Aple" onclick="window.location.href='https://appleid.apple.com/'">
                             <i class="fa-brands fa-apple"></i>                         
                         </button>
                     </div>
