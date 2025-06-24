@@ -78,12 +78,14 @@ body {
 }
 
 .card-content {
-    flex: 1;
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(40px, auto));
+    gap: 16px;
     padding: 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex: 1;
     position: relative;
+    width: 100%;
+    align-items: start;
 }
 
 .request-info {
@@ -97,12 +99,14 @@ body {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 8px;
+    text-align: center;
 }
 
 .request-info p {
     color: #2a2a2a;
     font-size: 18px;
     margin-bottom: 8px;
+    text-align: center;
 }
 
 .date-time-headers {
@@ -201,7 +205,7 @@ h3, p, h4 {
     font-size: clamp(1rem, 2.5vw, 1.25rem);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1350px) {
     
 
     .request-card {
@@ -218,6 +222,7 @@ h3, p, h4 {
     }
 
     .card-content {
+        width: 60%;
         flex-direction: row;
         gap: 16px;
     }
@@ -225,6 +230,8 @@ h3, p, h4 {
     .date-time-headers {
         gap: 48px;
         margin-right: 0;
+        justify-content: center;
+        gap: 25%;
     }
 
     .page-title {
@@ -234,7 +241,8 @@ h3, p, h4 {
     .card-actions {
         position: static;
         margin-top: 16px;
-        justify-content: flex-end;
+        justify-content: center;
+        gap: 50%;
     }
 
 }
