@@ -268,3 +268,39 @@ h3, p, h4 {
         font-size: 20px;
     }
 }
+
+
+.details-modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.5);
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.details-modal.show {
+  display: flex;
+}
+
+.details-modal-content {
+  background: #fff;
+  padding: 32px 24px;
+  border-radius: 8px;
+  min-width: 320px;
+  max-width: 90vw;
+  position: relative;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+}
+
+.close-details-modal {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}

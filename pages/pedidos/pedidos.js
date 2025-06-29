@@ -17,7 +17,7 @@ function getAllRequests() {
         data: car.data,
         nome: car.nome,
         hora: car.hora,
-        plano: car.plan
+        plano: car.plano
     }));
     
     return garageRequests;
@@ -39,7 +39,7 @@ function renderCards() {
         return;
     }
 
-    // updateGarageStats(allRequests);
+    
 
     allRequests.forEach((request, index) => {
         const card = document.createElement('div');
@@ -57,7 +57,7 @@ function renderCards() {
                 <div class="request-info">
                     <h3>${request.nome} REQUEST</h3>
                     <p>${request.local}</p>
-                    ${request.plano ? `<div class="plan-badge">titulo - 1999</div>` : ''}
+                    <!-- Plano removido do card -->
                 </div>
                 <div class="date-time-headers">
                     <div class="header-item">
@@ -75,7 +75,6 @@ function renderCards() {
                 </div>
                 <div id="details-container" class="details-container">
                 </div>
-                
             </div>
         `;
         
@@ -85,21 +84,32 @@ function renderCards() {
 }
 
 showDetails = (id) => {
-    const garageData = loadGarageData();
-    const request = garageData.find(car => car.id === id);
-    console.log('id', id);
+    const allRequests = getAllRequests();
+    const request = allRequests.find(car => car.id === id);
     if (request) {
-        const detailsContainer = document.getElementById('details-container');
-        detailsContainer.innerHTML = `
+        const userEmail = localStorage.getItem('userEmail') || 'Não informado';
+        const modal = document.getElementById('details-modal');
+        const modalContent = document.getElementById('details-modal-content');
+        modalContent.innerHTML = `
+            <button id="close-details-modal" class="close-details-modal">&times;</button>
             <h2>Detalhes do Pedido</h2>
-            <img src="${request.image}" alt="${request.nome}">
-            <p><strong>Nome:</strong> ${request.nome}</p>
-            <p><strong>Local:</strong> ${request.local}</p>
+            <p><strong>ID do Pedido:</strong> ${request.id}</p>
+            <p><strong>Email do Usuário:</strong> ${userEmail}</p>
             <p><strong>Data:</strong> ${request.data}</p>
             <p><strong>Hora:</strong> ${request.hora}</p>
-            <p><strong>Plano:</strong> ${request.plano}</p>
+            <p><strong>Nome:</strong> ${request.nome}</p>
+            <p><strong>Local:</strong> ${request.local}</p>
+            <p><strong>Plano:</strong> ${request.plano ? request.plano : 'N/A'}</p>
         `;
-        detailsContainer.style.display = 'block';
+        modal.classList.add('show');
+
+        document.getElementById('close-details-modal').onclick = () => {
+            modal.classList.remove('show');
+        };
+
+        modal.onclick = (e) => {
+            if (e.target === modal) modal.classList.remove('show');
+        };
     }
 }
 

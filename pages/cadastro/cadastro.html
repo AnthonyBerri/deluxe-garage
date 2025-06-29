@@ -70,17 +70,49 @@
 </body>
 
 <script>
+    
+    document.getElementById('iCPF').addEventListener('input', function(e) {
+        this.value = this.value.replace(/\D/g, '');
+    });
+
     document.querySelector('.form-cadastro').addEventListener('submit', function(e) {
         e.preventDefault();
-        const email = document.getElementById('iEmail').value;
+        const nome = document.getElementById('iNome').value.trim();
+        const cpf = document.getElementById('iCPF').value.trim();
+        const email = document.getElementById('iEmail').value.trim();
         const senha = document.getElementById('iPassword').value;
 
-        // Salva no localStorage
+        
+        if (nome.length < 3) {
+            alert('Digite um nome válido.');
+            return;
+        }
+
+       
+        if (!/^\d{11}$/.test(cpf)) {
+            alert('Digite um CPF válido (apenas números, 11 dígitos).');
+            return;
+        }
+
+       
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            alert('Digite um email válido.');
+            return;
+        }
+
+        
+        if (senha.length < 6) {
+            alert('A senha deve ter pelo menos 6 caracteres.');
+            return;
+        }
+
+        
+        localStorage.setItem('userName', nome);
         localStorage.setItem('userEmail', email);
         localStorage.setItem('userPassword', senha);
 
         alert('Usuário cadastrado com sucesso!');
-        // Redireciona para login ou outra ação
+        
     });
 </script>
 </html>

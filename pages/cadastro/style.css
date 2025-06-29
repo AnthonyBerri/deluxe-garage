@@ -4,7 +4,7 @@
     box-sizing: border-box;
     list-style: none;
 }
-/* Remove a barra de rolagem */
+
 body {
     overflow: hidden;
 }
@@ -27,8 +27,8 @@ main{
     width: 100vw;
     height: 100vh;
     background-image: url('../../assets/img/backgorund.png');
-    background-size: cover; /* Crops and fills the screen */
-    background-position: center; /* Centers the crop */
+    background-size: cover; 
+    background-position: center; 
     z-index: -1;
     position: absolute;
     right: 430px;
@@ -58,7 +58,7 @@ main{
         margin-bottom: 10px;
         color: #080808;
     }
-    /* Conteudo do Form */
+    
     & .form-body {   
         display: flex;
         flex-direction: column;
@@ -69,7 +69,7 @@ main{
         padding: 20px;
         gap: 5px;
         
-       /* Estilo do campo de entrada */      
+      
       
        & .group_row {
             display: flex;
@@ -90,7 +90,7 @@ main{
             width: 100%;
           }
           
-          /* Estilo do campo de entrada */
+          
        & .form__group {
             position: relative;
             padding: 15px 0 0;
@@ -149,11 +149,11 @@ main{
             font-weight: 700;
           }
           
-          /* reset input */
+         
           .form__field:required, .form__field:invalid {
             box-shadow: none;
           }
-        /* FIM Estilo do campo de entrada */  
+        
 
     }
     & .form-footer {
@@ -189,7 +189,7 @@ main{
    
 }
 
-/* Responsividade para telas menores */
+
 @media (max-width: 1024px) {
   .fullscreen-bg {
     right: 0;
