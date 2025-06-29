@@ -98,6 +98,17 @@ class HeaderComponent extends HTMLElement {
     const closeForgotBtn = this.shadowRoot.querySelector('.close-forgot-btn');
     const forgotPasswordForm = this.shadowRoot.querySelector('#forgot-password-form');
     const forgotPasswordSuccess = this.shadowRoot.querySelector('#forgot-password-success');
+    const loginForm = this.shadowRoot.querySelector('.form-login');
+
+    // Cria elemento para mensagem de erro
+    let loginError = this.shadowRoot.querySelector('#login-error');
+    if (!loginError) {
+        loginError = document.createElement('p');
+        loginError.id = 'login-error';
+        loginError.style.color = 'red';
+        loginError.style.display = 'none';
+        loginForm.parentNode.insertBefore(loginError, loginForm.nextSibling);
+    }
 
     if (sessionStorage.getItem('showLoginModal') === 'true') {
         loginModal.style.display = 'block';
@@ -115,6 +126,29 @@ class HeaderComponent extends HTMLElement {
 
     closeBtn.addEventListener('click', () => {
         loginModal.style.display = 'none';
+        loginError.style.display = 'none';
+    });
+
+    // Verificação de login
+    loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = this.shadowRoot.querySelector('#username').value;
+        const password = this.shadowRoot.querySelector('#password').value;
+
+        // Busca os dados cadastrados no localStorage
+        const registeredEmail = localStorage.getItem('userEmail');
+        const registeredPassword = localStorage.getItem('userPassword');
+
+        if (email === registeredEmail && password === registeredPassword) {
+            loginError.style.display = 'none';
+            loginModal.style.display = 'none';
+            alert(`Bem-vindo ao sistema, ${email}!`);
+            // Você pode salvar o login no sessionStorage/localStorage se quiser
+            // Exemplo: sessionStorage.setItem('user', email);
+        } else {
+            loginError.textContent = 'Email ou senha incorretos!';
+            loginError.style.display = 'block';
+        }
     });
 
     forgotPassword.addEventListener('click', (e) => {
@@ -144,6 +178,7 @@ class HeaderComponent extends HTMLElement {
     window.addEventListener('click', (e) => {
         if (e.target === loginModal) {
             loginModal.style.display = 'none';
+            loginError.style.display = 'none';
         }
         if (e.target === forgotPasswordModal) {
             forgotPasswordModal.style.display = 'none';
