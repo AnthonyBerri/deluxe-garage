@@ -310,6 +310,12 @@ label {
     input[type="time"] {
         max-width: 100%;
     }
+    .form-group select {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
 }
 @media (max-width: 900px) {
     .reserva-form{
