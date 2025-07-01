@@ -132,7 +132,7 @@
         margin-right: 24px;
     }
     .navigation-auto {
-        margin-top: 220px;
+        margin-top: 260px;
     }
 }
 
@@ -160,17 +160,26 @@
     }
     .manual-navigation,
     .navigation-auto {
-        width: 350px;
+        position: absolute;
+        width: 95vw;
         max-width: 350px;
         left: 50%;
         transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+    }
+    .manual-navigation {
+        margin-top: -40px;
+        z-index: 2;
+    }
+    .navigation-auto {
+        margin-top: 165px; /* Ajuste para ficar logo abaixo da manual-navigation */
+        z-index: 1;
+        top: calc(74.25vw * 9 / 16);
     }
     .manual-btn:not(:last-child),
     .navigation-auto div:not(:last-child) {
         margin-right: 10px;
-    }
-    .navigation-auto {
-        margin-top: 100px;
     }
 }
 
